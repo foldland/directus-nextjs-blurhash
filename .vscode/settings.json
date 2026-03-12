@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.action.useSortedKeys.biome": "explicit",
+    "source.fixAll.biome": "explicit"
+  },
+  "[json][jsonc][javascript][javascriptreact][typescript][typescriptreact][css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "biome.suggestInstallingGlobally": false,
+  "redhat.telemetry.enabled": false,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false
+}

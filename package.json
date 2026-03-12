@@ -1,0 +1,65 @@
+{
+  "name": "@debacode-public/directus-nextjs-blurhash",
+  "description": "A Directus extension for generating and storing BlurHash strings, enhancing image loading visuals.",
+  "icon": "extension",
+  "version": "1.2.0",
+  "author": "debacode",
+  "license": "(c) Copyright 2025 DeBaCode gUG, all rights reserved.",
+  "keywords": [
+    "directus-extension"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "directus:extension": {
+    "type": "hook",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": ">=11.11.0",
+    "icon": "Image",
+    "description": "A Directus extension for generating and storing BlurHash strings, enhancing image loading visuals.",
+    "author": "debacode"
+  },
+  "scripts": {
+    "build": "directus-extension build",
+    "check": "pnpm format:check && pnpm lint:check && pnpm typecheck",
+    "dev": "directus-extension build -w --no-minify",
+    "format:check": "biome check --formatter-enabled=true --linter-enabled=false --assist-enabled=false ",
+    "format:write": "biome format --write",
+    "link": "directus-extension link",
+    "lint:check": "biome check --formatter-enabled=false --linter-enabled=true --assist-enabled=true",
+    "lint:write": "biome lint --write",
+    "test": "",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@directus/extensions-sdk": "^17.0.4",
+    "pino": "9.7.0",
+    "sharp": "0.34.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.6",
+    "@debacode-public/biome-configs": "0.8.20",
+    "@directus/types": "14.3.0",
+    "@types/node": "24.12.0",
+    "typescript": "5.9.3"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24.14.0",
+      "onFail": "download"
+    },
+    "packageManager": [
+      {
+        "name": "pnpm",
+        "version": "10.32.1",
+        "onFail": "download"
+      },
+      {
+        "name": "npm"
+      }
+    ]
+  }
+}

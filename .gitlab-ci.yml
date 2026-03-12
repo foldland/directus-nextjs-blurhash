@@ -1,0 +1,57 @@
+# yaml-language-server: $schema=https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json
+
+include:
+  - project: tools/shared-pipelines
+    ref: v4.5.11
+    file: /base/base.yaml
+    inputs:
+      ignored_licenses:
+        - BlueOak-1.0.0
+        - BUSL-1.1
+        - LGPL-3.0-only
+        - LGPL-3.0-or-later
+  - project: tools/shared-pipelines
+    ref: v4.5.11
+    file: /nodejs/nodejs.yaml
+
+# Prepare
+prepare-precache:
+  extends: .prepare-nodejs-precache
+
+# Analysis - general
+analysis-spell-check:
+  extends: .analysis-base-spell-check
+
+analysis-licenses:
+  extends: .analysis-nodejs-licenses
+
+analysis-security:
+  extends: .analysis-nodejs-security
+
+# Analysis - style
+analysis-lint:
+  extends: .analysis-nodejs-lint
+
+analysis-format:
+  extends: .analysis-nodejs-format
+
+analysis-typescript:
+  extends: .analysis-nodejs-typescript
+
+build:
+  extends: .build-nodejs-pnpm
+
+publish-preview:
+  extends: .publish-nodejs-pnpm-preview
+
+publish-production:
+  extends: .publish-nodejs-pnpm-production
+
+# Release
+release-prepare-mr:
+  extends:
+    - .release-prepare-mr
+
+release-tag:
+  extends:
+    - .release-tag

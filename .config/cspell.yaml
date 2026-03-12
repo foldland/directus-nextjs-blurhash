@@ -1,0 +1,40 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/streetsidesoftware/cspell/main/packages/cspell-types/cspell.schema.json
+
+version: "0.2"
+language: "en"
+useGitignore: true
+enableGlobDot: false
+ignorePaths:
+  - pnpm-lock.yaml
+dictionaries:
+  # cspell - https://github.com/streetsidesoftware/cspell-dicts
+  - "bash"
+  - "en_us"
+  - "git"
+  - "node"
+  - "npm"
+  - "softwareTerms"
+  # project
+  - "project"
+  - "project-tools"
+  # custom
+  - "debacode"
+  - "debacode-tools"
+  - "debacode-nodejs"
+  - "debacode-nodejs-tools"
+dictionaryDefinitions:
+  # project
+  - name: "project"
+    path: cspell/project.txt
+  - name: "project-tools"
+    path: cspell/project-tools.txt
+  # base
+  - name: "debacode"
+    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.21.0/base/misc.txt
+  - name: "debacode-tools"
+    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.21.0/base/tools.txt
+  # nodejs
+  - name: "debacode-nodejs"
+    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.21.0/nodejs/language.txt
+  - name: "debacode-nodejs-tools"
+    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.21.0/nodejs/tools.txt

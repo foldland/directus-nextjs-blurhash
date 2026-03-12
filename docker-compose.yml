@@ -1,0 +1,22 @@
+services:
+  directus:
+    image: docker.io/directus/directus:11@sha256:8543bb57029d6e4087fd6bd83944233b271b3858465aa8e43d888e618bbe0a69
+    ports:
+      - 8055:8055
+    volumes:
+      - database:/directus/database
+      - uploads:/directus/uploads
+      - .:/directus/extensions/directus-extension-blurhasher
+      - .:/directus/node_modules/directus-extension-blurhasher
+    environment:
+      KEY: "replace-with-random-value"
+      SECRET: "replace-with-random-value"
+      ADMIN_EMAIL: "admin@example.com"
+      ADMIN_PASSWORD: "admin"
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/directus/database/data.db"
+      ASSETS_TRANSFORM_IMAGE_MAX_DIMENSION: 10000
+
+volumes:
+  database:
+  uploads:
