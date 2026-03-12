@@ -2,7 +2,7 @@
   "name": "@debacode-public/directus-nextjs-blurhash",
   "description": "A Directus extension for generating and storing BlurHash strings, enhancing image loading visuals.",
   "icon": "extension",
-  "version": "1.2.0",
+  "version": "1.0.0",
   "author": "debacode",
   "license": "(c) Copyright 2025 DeBaCode gUG, all rights reserved.",
   "keywords": [
