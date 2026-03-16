@@ -22,8 +22,8 @@ importers:
         specifier: 2.4.6
         version: 2.4.6
       '@debacode-public/biome-configs':
-        specifier: 0.8.20
-        version: 0.8.20(@biomejs/biome@2.4.6)
+        specifier: 1.0.0
+        version: 1.0.0(@biomejs/biome@2.4.6)
       '@directus/types':
         specifier: 14.3.0
         version: 14.3.0(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@5.9.3))
@@ -242,8 +242,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@debacode-public/biome-configs@0.8.20':
-    resolution: {integrity: sha512-Rq78nQhAeYYIn+BN4GEdofDDlG+5ocsGuXsKXdBWrUyyAdfeAn2HdOPvCOvbxgOfKVWkHMDC0r1M6PIAwUR9LA==}
+  '@debacode-public/biome-configs@1.0.0':
+    resolution: {integrity: sha512-kTh3eR4HHujtxeRe3uijAlS7K0xVVpRFiyzuodYN2A0Vb8xeVL38CcqPDY/i8qmYakcPXRr0h2LiJqhAi572SQ==}
     peerDependencies:
       '@biomejs/biome': ~2.2.0 || ~2.3.0 || ~2.4.0
 
@@ -3226,7 +3226,7 @@ snapshots:
   '@biomejs/cli-win32-x64@2.4.6':
     optional: true
 
-  '@debacode-public/biome-configs@0.8.20(@biomejs/biome@2.4.6)':
+  '@debacode-public/biome-configs@1.0.0(@biomejs/biome@2.4.6)':
     dependencies:
       '@biomejs/biome': 2.4.6
 
