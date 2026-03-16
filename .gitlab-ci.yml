@@ -2,7 +2,7 @@
 
 include:
   - project: tools/shared-pipelines
-    ref: v4.5.11
+    ref: v5.0.6
     file: /base/base.yaml
     inputs:
       ignored_licenses:
@@ -11,7 +11,7 @@ include:
         - LGPL-3.0-only
         - LGPL-3.0-or-later
   - project: tools/shared-pipelines
-    ref: v4.5.11
+    ref: v5.0.6
     file: /nodejs/nodejs.yaml
 
 # Prepare
