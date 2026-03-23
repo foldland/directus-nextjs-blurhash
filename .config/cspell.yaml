@@ -30,11 +30,11 @@ dictionaryDefinitions:
     path: cspell/project-tools.txt
   # base
   - name: "debacode"
-    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.22.0/base/misc.txt
+    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.23.0/base/misc.txt
   - name: "debacode-tools"
-    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.22.0/base/tools.txt
+    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.23.0/base/tools.txt
   # nodejs
   - name: "debacode-nodejs"
-    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.22.0/nodejs/language.txt
+    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.23.0/nodejs/language.txt
   - name: "debacode-nodejs-tools"
-    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.22.0/nodejs/tools.txt
+    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.23.0/nodejs/tools.txt
