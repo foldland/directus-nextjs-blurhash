@@ -29,7 +29,7 @@
     "format:write": "biome format --write",
     "link": "directus-extension link",
     "lint:check": "biome check --formatter-enabled=false --linter-enabled=true --assist-enabled=true",
-    "lint:write": "biome lint --write",
+    "lint:write": "pnpm lint:check --write",
     "test": "",
     "typecheck": "tsc --noEmit"
   },
@@ -39,7 +39,7 @@
     "sharp": "0.34.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.6",
+    "@biomejs/biome": "2.4.8",
     "@debacode-public/biome-configs": "1.0.0",
     "@directus/types": "14.3.1",
     "@types/node": "24.12.0",
