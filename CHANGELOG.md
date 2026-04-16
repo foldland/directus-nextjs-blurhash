@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.0.2](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/compare/v1.0.1..v1.0.2) - 2026-04-16
+
+### 🔧 Chores
+
+- migrate ownership to fold:land - ([de28186](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/de281867dab9a5d1d3ddea033a1a39a355cc97e3)) - @Nikolas Rimikis
+
+
+
+
+#### Statistics
+- 1 commit(s) contributed to the release.
+- 0 day(s) passed between the first and last commit.
+- 1 commit(s) parsed as conventional.
+- 0 linked issue(s) detected in commits.
+---
 ## [1.0.1](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/compare/v1.0.0..v1.0.1) - 2026-04-16
 
 ### 🔧 Chores
