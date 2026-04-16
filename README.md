@@ -1,6 +1,7 @@
-# Directus NextJS Blurhasher
+# Directus NextJS Blurhash
 
-This is an extension for [Directus](https://github.com/directus/directus) that automatically generates nextjs blur strings for images upon their upload.
+This is an extension for [Directus](https://github.com/directus/directus) that automatically generates nextjs blur data strings for images upon their upload.
+It is based on the [directus-extension-blurhasher](https://github.com/antonko/directus-extension-blurhasher) which generates conventional blurhashes.
 
 Key features:
 
@@ -33,19 +34,19 @@ This extension has been tested on Directus version v11.0.0, however, it should w
 ## Installation
 
 ```bash
-npm install directus-nextjs-blurhash
+pnpm install @foldland/directus-nextjs-blurhash
 ```
 
 Example Dockerfile with the extension installed:
 
 ```Dockerfile
-FROM directus/directus:10.10.4
+FROM directus/directus:11
 
 USER root
 RUN corepack enable
 USER node
 
-RUN pnpm install directus-nextjs-blurhash
+RUN pnpm install @foldland/directus-nextjs-blurhash
 ```
 
 ## Development

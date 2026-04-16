@@ -1,12 +1,15 @@
 {
-  "name": "@debacode-public/directus-nextjs-blurhash",
-  "description": "A Directus extension for generating and storing BlurHash strings, enhancing image loading visuals.",
+  "name": "@foldland/directus-nextjs-blurhash",
+  "description": "A Directus extension for generating and storing nextjs blur data strings, enhancing image loading visuals.",
   "icon": "extension",
   "version": "1.0.1",
-  "author": "debacode",
-  "license": "(c) Copyright 2025 DeBaCode gUG, all rights reserved.",
+  "author": "foldland Software GmbH",
+  "license": "Apache-2.0",
   "keywords": [
-    "directus-extension"
+    "directus",
+    "directus-extension",
+    "nextjs",
+    "blurhash"
   ],
   "files": [
     "dist",
@@ -18,8 +21,8 @@
     "source": "src/index.ts",
     "host": ">=11.11.0",
     "icon": "Image",
-    "description": "A Directus extension for generating and storing BlurHash strings, enhancing image loading visuals.",
-    "author": "debacode"
+    "description": "A Directus extension for generating and storing nextjs blur data strings, enhancing image loading visuals.",
+    "author": "foldland Software GmbH"
   },
   "scripts": {
     "build": "directus-extension build",
