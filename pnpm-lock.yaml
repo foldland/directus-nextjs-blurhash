@@ -18,7 +18,7 @@ importers:
     dependencies:
       '@directus/extensions-sdk':
         specifier: ^17.0.4
-        version: 17.1.2(@types/node@24.12.2)(@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.2)))(knex@3.1.0)(pinia@2.3.1(typescript@6.0.2)(vue@3.5.24(typescript@6.0.2)))(pino@9.7.0)(sharp@0.34.5)(terser@5.46.1)(typescript@6.0.2)
+        version: 17.1.2(@types/node@24.12.2)(@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.3)))(knex@3.1.0)(pinia@2.3.1(typescript@6.0.3)(vue@3.5.24(typescript@6.0.3)))(pino@9.7.0)(sharp@0.34.5)(terser@5.46.1)(typescript@6.0.3)
       pino:
         specifier: 9.7.0
         version: 9.7.0
@@ -34,7 +34,7 @@ importers:
         version: 1.1.2(@biomejs/biome@2.4.12)
       '@directus/types':
         specifier: 15.0.2
-        version: 15.0.2(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.2))
+        version: 15.0.2(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))
       '@types/node':
         specifier: 24.12.2
         version: 24.12.2
@@ -42,8 +42,8 @@ importers:
         specifier: runtime:^24.0.0
         version: runtime:24.15.0
       typescript:
-        specifier: 6.0.2
-        version: 6.0.2
+        specifier: 6.0.3
+        version: 6.0.3
 
 packages:
 
@@ -2739,8 +2739,8 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  typescript@6.0.2:
-    resolution: {integrity: sha512-bGdAIrZ0wiGDo5l8c++HWtbaNCWTS4UTv7RaTH/ThVIgjkveJt83m74bBHMJkuCbslY8ixgLBVZJIOiQlQTjfQ==}
+  typescript@6.0.3:
+    resolution: {integrity: sha512-y2TvuxSZPDyQakkFRPZHKFm+KKVqIisdg9/CZwm9ftvKXLP8NRWj38/ODjNbr43SsoXqNuAisEf1GdCxqWcdBw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -3277,34 +3277,34 @@ snapshots:
 
   '@directus/ai@1.3.1': {}
 
-  '@directus/composables@11.3.0(vue@3.5.24(typescript@6.0.2))':
+  '@directus/composables@11.3.0(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@directus/constants': 14.3.0
-      '@directus/utils': 13.4.0(vue@3.5.24(typescript@6.0.2))
+      '@directus/utils': 13.4.0(vue@3.5.24(typescript@6.0.3))
       axios: 1.15.0
       lodash-es: 4.18.1
       nanoid: 5.1.6
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
     transitivePeerDependencies:
       - debug
 
   '@directus/constants@14.3.0': {}
 
-  '@directus/extensions-sdk@17.1.2(@types/node@24.12.2)(@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.2)))(knex@3.1.0)(pinia@2.3.1(typescript@6.0.2)(vue@3.5.24(typescript@6.0.2)))(pino@9.7.0)(sharp@0.34.5)(terser@5.46.1)(typescript@6.0.2)':
+  '@directus/extensions-sdk@17.1.2(@types/node@24.12.2)(@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.3)))(knex@3.1.0)(pinia@2.3.1(typescript@6.0.3)(vue@3.5.24(typescript@6.0.3)))(pino@9.7.0)(sharp@0.34.5)(terser@5.46.1)(typescript@6.0.3)':
     dependencies:
-      '@directus/composables': 11.3.0(vue@3.5.24(typescript@6.0.2))
+      '@directus/composables': 11.3.0(vue@3.5.24(typescript@6.0.3))
       '@directus/constants': 14.3.0
-      '@directus/extensions': 3.0.23(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.2))
-      '@directus/themes': 1.3.1(@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.2)))(pinia@2.3.1(typescript@6.0.2)(vue@3.5.24(typescript@6.0.2)))(vue@3.5.24(typescript@6.0.2))
-      '@directus/types': 15.0.1(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.2))
-      '@directus/utils': 13.4.0(vue@3.5.24(typescript@6.0.2))
+      '@directus/extensions': 3.0.23(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))
+      '@directus/themes': 1.3.1(@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.3)))(pinia@2.3.1(typescript@6.0.3)(vue@3.5.24(typescript@6.0.3)))(vue@3.5.24(typescript@6.0.3))
+      '@directus/types': 15.0.1(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))
+      '@directus/utils': 13.4.0(vue@3.5.24(typescript@6.0.3))
       '@rollup/plugin-commonjs': 28.0.9(rollup@4.59.0)
       '@rollup/plugin-json': 6.1.0(rollup@4.59.0)
       '@rollup/plugin-node-resolve': 16.0.3(rollup@4.59.0)
       '@rollup/plugin-replace': 6.0.3(rollup@4.59.0)
       '@rollup/plugin-terser': 1.0.0(rollup@4.59.0)
       '@rollup/plugin-virtual': 3.0.2(rollup@4.59.0)
-      '@vitejs/plugin-vue': 6.0.6(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.7)(terser@5.46.1))(vue@3.5.24(typescript@6.0.2))
+      '@vitejs/plugin-vue': 6.0.6(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.7)(terser@5.46.1))(vue@3.5.24(typescript@6.0.3))
       chalk: 5.6.2
       commander: 14.0.2
       esbuild: 0.27.7
@@ -3314,10 +3314,10 @@ snapshots:
       ora: 8.2.0
       rollup: 4.59.0
       rollup-plugin-esbuild: 6.2.1(esbuild@0.27.7)(rollup@4.59.0)
-      rollup-plugin-styler: 2.0.0(rollup@4.59.0)(typescript@6.0.2)
+      rollup-plugin-styler: 2.0.0(rollup@4.59.0)(typescript@6.0.3)
       semver: 7.7.3
       vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.7)(terser@5.46.1)
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
     transitivePeerDependencies:
       - '@types/node'
       - '@unhead/vue'
@@ -3354,11 +3354,11 @@ snapshots:
       - ws
       - yaml
 
-  '@directus/extensions@3.0.23(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.2))':
+  '@directus/extensions@3.0.23(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@directus/constants': 14.3.0
-      '@directus/types': 15.0.1(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.2))
-      '@directus/utils': 13.4.0(vue@3.5.24(typescript@6.0.2))
+      '@directus/types': 15.0.1(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))
+      '@directus/utils': 13.4.0(vue@3.5.24(typescript@6.0.3))
       '@types/express': 4.17.21
       fs-extra: 11.3.2
       lodash-es: 4.18.1
@@ -3366,7 +3366,7 @@ snapshots:
     optionalDependencies:
       knex: 3.1.0
       pino: 9.7.0
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
     transitivePeerDependencies:
       - aws-crt
       - better-sqlite3
@@ -3413,17 +3413,17 @@ snapshots:
 
   '@directus/system-data@4.4.0': {}
 
-  '@directus/themes@1.3.1(@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.2)))(pinia@2.3.1(typescript@6.0.2)(vue@3.5.24(typescript@6.0.2)))(vue@3.5.24(typescript@6.0.2))':
+  '@directus/themes@1.3.1(@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.3)))(pinia@2.3.1(typescript@6.0.3)(vue@3.5.24(typescript@6.0.3)))(vue@3.5.24(typescript@6.0.3))':
     dependencies:
-      '@directus/utils': 13.4.0(vue@3.5.24(typescript@6.0.2))
-      '@unhead/vue': 1.11.20(vue@3.5.24(typescript@6.0.2))
+      '@directus/utils': 13.4.0(vue@3.5.24(typescript@6.0.3))
+      '@unhead/vue': 1.11.20(vue@3.5.24(typescript@6.0.3))
       decamelize: 6.0.1
       flat: 6.0.1
       lodash-es: 4.18.1
-      pinia: 2.3.1(typescript@6.0.2)(vue@3.5.24(typescript@6.0.2))
-      vue: 3.5.24(typescript@6.0.2)
+      pinia: 2.3.1(typescript@6.0.3)(vue@3.5.24(typescript@6.0.3))
+      vue: 3.5.24(typescript@6.0.3)
 
-  '@directus/types@15.0.1(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.2))':
+  '@directus/types@15.0.1(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@directus/ai': 1.3.1
       '@directus/constants': 14.3.0
@@ -3439,7 +3439,7 @@ snapshots:
       knex: 3.1.0
       pino: 9.7.0
       sharp: 0.34.5
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
     transitivePeerDependencies:
       - aws-crt
       - better-sqlite3
@@ -3451,7 +3451,7 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/types@15.0.2(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.2))':
+  '@directus/types@15.0.2(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@directus/ai': 1.3.1
       '@directus/constants': 14.3.0
@@ -3466,7 +3466,7 @@ snapshots:
       knex: 3.1.0
       pino: 9.7.0
       sharp: 0.34.5
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
     transitivePeerDependencies:
       - aws-crt
       - better-sqlite3
@@ -3478,7 +3478,7 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/utils@13.4.0(vue@3.5.24(typescript@6.0.2))':
+  '@directus/utils@13.4.0(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@directus/constants': 14.3.0
       '@directus/system-data': 4.4.0
@@ -3490,7 +3490,7 @@ snapshots:
       micromustache: 8.0.3
       zod: 4.1.12
     optionalDependencies:
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
 
   '@emnapi/core@1.9.2':
     dependencies:
@@ -4399,19 +4399,19 @@ snapshots:
       '@unhead/schema': 1.11.20
       packrup: 0.1.2
 
-  '@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.2))':
+  '@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@unhead/schema': 1.11.20
       '@unhead/shared': 1.11.20
       hookable: 5.5.3
       unhead: 1.11.20
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
 
-  '@vitejs/plugin-vue@6.0.6(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.7)(terser@5.46.1))(vue@3.5.24(typescript@6.0.2))':
+  '@vitejs/plugin-vue@6.0.6(vite@8.0.8(@types/node@24.12.2)(esbuild@0.27.7)(terser@5.46.1))(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.13
       vite: 8.0.8(@types/node@24.12.2)(esbuild@0.27.7)(terser@5.46.1)
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
 
   '@vue/compiler-core@3.5.24':
     dependencies:
@@ -4461,11 +4461,11 @@ snapshots:
       '@vue/shared': 3.5.24
       csstype: 3.2.3
 
-  '@vue/server-renderer@3.5.24(vue@3.5.24(typescript@6.0.2))':
+  '@vue/server-renderer@3.5.24(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@vue/compiler-ssr': 3.5.24
       '@vue/shared': 3.5.24
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
 
   '@vue/shared@3.5.24': {}
 
@@ -4559,14 +4559,14 @@ snapshots:
 
   commondir@1.0.1: {}
 
-  cosmiconfig@8.3.6(typescript@6.0.2):
+  cosmiconfig@8.3.6(typescript@6.0.3):
     dependencies:
       import-fresh: 3.3.1
       js-yaml: 4.1.1
       parse-json: 5.2.0
       path-type: 4.0.0
     optionalDependencies:
-      typescript: 6.0.2
+      typescript: 6.0.3
 
   cross-spawn@7.0.6:
     dependencies:
@@ -5136,13 +5136,13 @@ snapshots:
 
   picomatch@4.0.4: {}
 
-  pinia@2.3.1(typescript@6.0.2)(vue@3.5.24(typescript@6.0.2)):
+  pinia@2.3.1(typescript@6.0.3)(vue@3.5.24(typescript@6.0.3)):
     dependencies:
       '@vue/devtools-api': 6.6.4
-      vue: 3.5.24(typescript@6.0.2)
-      vue-demi: 0.14.10(vue@3.5.24(typescript@6.0.2))
+      vue: 3.5.24(typescript@6.0.3)
+      vue-demi: 0.14.10(vue@3.5.24(typescript@6.0.3))
     optionalDependencies:
-      typescript: 6.0.2
+      typescript: 6.0.3
     transitivePeerDependencies:
       - '@vue/composition-api'
 
@@ -5423,10 +5423,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  rollup-plugin-styler@2.0.0(rollup@4.59.0)(typescript@6.0.2):
+  rollup-plugin-styler@2.0.0(rollup@4.59.0)(typescript@6.0.3):
     dependencies:
       '@rollup/pluginutils': 5.3.0(rollup@4.59.0)
-      cosmiconfig: 8.3.6(typescript@6.0.2)
+      cosmiconfig: 8.3.6(typescript@6.0.3)
       cssnano: 7.1.4(postcss@8.5.9)
       fs-extra: 11.3.2
       icss-utils: 5.1.0(postcss@8.5.9)
@@ -5620,7 +5620,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  typescript@6.0.2: {}
+  typescript@6.0.3: {}
 
   undici-types@7.16.0: {}
 
@@ -5661,19 +5661,19 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.46.1
 
-  vue-demi@0.14.10(vue@3.5.24(typescript@6.0.2)):
+  vue-demi@0.14.10(vue@3.5.24(typescript@6.0.3)):
     dependencies:
-      vue: 3.5.24(typescript@6.0.2)
+      vue: 3.5.24(typescript@6.0.3)
 
-  vue@3.5.24(typescript@6.0.2):
+  vue@3.5.24(typescript@6.0.3):
     dependencies:
       '@vue/compiler-dom': 3.5.24
       '@vue/compiler-sfc': 3.5.24
       '@vue/runtime-dom': 3.5.24
-      '@vue/server-renderer': 3.5.24(vue@3.5.24(typescript@6.0.2))
+      '@vue/server-renderer': 3.5.24(vue@3.5.24(typescript@6.0.3))
       '@vue/shared': 3.5.24
     optionalDependencies:
-      typescript: 6.0.2
+      typescript: 6.0.3
 
   which@2.0.2:
     dependencies:
