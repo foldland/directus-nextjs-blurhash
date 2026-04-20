@@ -46,7 +46,7 @@
     "@debacode-public/biome-configs": "1.1.2",
     "@directus/types": "15.0.2",
     "@types/node": "24.12.2",
-    "typescript": "6.0.2"
+    "typescript": "6.0.3"
   },
   "devEngines": {
     "runtime": {
