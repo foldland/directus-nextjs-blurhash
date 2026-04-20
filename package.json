@@ -42,8 +42,8 @@
     "sharp": "0.34.5"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.11",
-    "@debacode-public/biome-configs": "1.1.1",
+    "@biomejs/biome": "2.4.12",
+    "@debacode-public/biome-configs": "1.1.2",
     "@directus/types": "15.0.2",
     "@types/node": "24.12.2",
     "typescript": "6.0.2"
