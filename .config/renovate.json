@@ -1,10 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>debacode/renovate-configs//languages/default#v3.9.0",
-    "github>debacode/renovate-configs//languages/nodejs#v3.9.0",
-    "github>debacode/renovate-configs//presets/library#v3.9.0",
-    "github>debacode/renovate-configs//presets/nodejs-pnpm#v3.9.0",
+    "github>debacode/renovate-configs//languages/default#v3.9.1",
+    "github>debacode/renovate-configs//languages/nodejs#v3.9.1",
+    "github>debacode/renovate-configs//presets/library#v3.9.1",
+    "github>debacode/renovate-configs//presets/nodejs-pnpm#v3.9.1",
     "schedule:earlyMondays"
   ]
 }
