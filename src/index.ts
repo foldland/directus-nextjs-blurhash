@@ -24,7 +24,8 @@ const hook = defineHook(
       /**
        * Migration
        */
-      await runMigration(fieldsService, logger)
+      await runMigration(fieldsService)
+      logger.info('[blurhasher]: migration run')
 
       const settings = new SettingsService({ schema: schema, knex: database })
 

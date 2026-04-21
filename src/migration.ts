@@ -1,5 +1,4 @@
 import type { ExtensionsServices, FieldRaw } from '@directus/types'
-import type { Logger } from 'pino'
 import {
   directus_files_blurhash,
   settings_detail_level,
@@ -14,13 +13,10 @@ type FieldsService = InstanceType<ExtensionsServices['FieldsService']>
  * @param fieldsService - The service for managing fields.
  * @param logger - The logger for logging messages.
  */
-export async function runMigration(
-  fieldsService: FieldsService,
-  logger: Logger
-) {
-  await ensureField(fieldsService, directus_files_blurhash as FieldRaw, logger)
-  await ensureField(fieldsService, settings_detail_level as FieldRaw, logger)
-  await ensureField(fieldsService, settings_regenerate as FieldRaw, logger)
+export async function runMigration(fieldsService: FieldsService) {
+  await ensureField(fieldsService, directus_files_blurhash as FieldRaw)
+  await ensureField(fieldsService, settings_detail_level as FieldRaw)
+  await ensureField(fieldsService, settings_regenerate as FieldRaw)
 }
 
 /**
@@ -33,25 +29,17 @@ export async function runMigration(
  */
 export async function ensureField(
   fieldsService: FieldsService,
-  field: FieldRaw,
-  logger: Logger
+  field: FieldRaw
 ): Promise<void> {
-  try {
-    const found = await fieldsService.readOne(field.collection, field.field)
-    if (found) {
-      return
-    }
+  const found = await fieldsService
+    .readOne(field.collection, field.field)
+    .catch(() => {
+      return undefined
+    })
 
-    logger.info(
-      `[blurhasher]: Creating field ${field.collection}.${field.field}`
-    )
-    await fieldsService.createField(field.collection, field)
-    logger.info(
-      `[blurhasher]: Field ${field.collection}.${field.field} created`
-    )
-  } catch (error) {
-    logger.error(
-      `[blurhasher]: Failed to fetch ${field.collection}.${field.field} information: ${error}`
-    )
+  if (found) {
+    return
   }
+
+  await fieldsService.createField(field.collection, field)
 }
