@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.0.3](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/compare/v1.0.2..v1.0.3) - 2026-04-21
+
+### 🐛 Bug Fixes & Optimizations
+
+- initial setup - ([e6d56ea](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/e6d56ea0806068a4128704f2c49b7b850df576ef)) - @Nikolas Rimikis
+
+### 🚨 Tests
+
+- add testing setup - ([593d664](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/593d66408cfc9ad27f72248172a8862d28aaac04)) - @nikolas.rimikis
+
+### 🔧 Chores
+
+- **(deps)** update dependency @directus/types to v15.0.2 - ([9d61ab0](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/9d61ab0a635b60245d9b5e6f440ba0ede08d9389)) - @renovate
+- **(deps)** update dependency debacode/renovate-configs to v3.9.1 - ([93f2e65](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/93f2e65336622489558d42229bd5220a5de8a388)) - @renovate
+- **(deps)** update biome packages - ([8daacc6](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/8daacc6bf3d4822d6c701eb09a9ed25a963f6536)) - @renovate
+- **(deps)** lock file maintenance - ([04f6526](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/04f65263bff6dee39ef6ae2eb7362c3b4cc374ea)) - @renovate
+- **(deps)** update dependency typescript to v6.0.3 - ([675bcba](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/675bcba4f26ea0bb367307af85dcbf0c64cf02eb)) - @renovate
+- remove old dependency overrides - ([f9113b1](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/f9113b1ee2b64e379c80ae7f8d643c2a1178ef92)) - @nikolas.rimikis
+- make pino and sharp a dev dependency - ([6d26d38](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/6d26d38e3ff825b194c67499182117bcaaa60a65)) - @nikolas.rimikis
+
+#### New Contributors ❤️
+
+
+* @nikolas.rimikis made their first contribution 
+
+#### Statistics
+- 9 commit(s) contributed to the release.
+- 1 day(s) passed between the first and last commit.
+- 9 commit(s) parsed as conventional.
+- 0 linked issue(s) detected in commits.
+- 5 day(s) passed between releases.
+---
 ## [1.0.2](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/compare/v1.0.1..v1.0.2) - 2026-04-16
 
 ### 🔧 Chores

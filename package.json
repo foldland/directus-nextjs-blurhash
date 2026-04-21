@@ -2,7 +2,7 @@
   "name": "@foldland/directus-nextjs-blurhash",
   "description": "A Directus extension for generating and storing nextjs blur data strings, enhancing image loading visuals.",
   "icon": "extension",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "foldland Software GmbH",
   "license": "Apache-2.0",
   "keywords": [
