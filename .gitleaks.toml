@@ -1,0 +1,10 @@
+title = "Directus template"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+  description = "Ignore templates. They contain a 'key' field."
+  paths = [
+    '''^directus\/.+''',
+  ]

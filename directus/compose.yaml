@@ -1,0 +1,72 @@
+name: directus-nextjs-blurhash
+services:
+  database:
+    image: docker.io/postgis/postgis:17-master@sha256:403f4c5558c314006aad90170226190d8e1f7720c5024b3b9d9f3bcf8e93d92b
+    platform: linux/amd64
+    volumes:
+      - ${DATABASE_VOLUME:-./data/database}:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "pg_isready",
+          "-U",
+          "${DB_USER}",
+          "-d",
+          "${DB_DATABASE}",
+          "-h",
+          "localhost",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_interval: 5s
+      start_period: 30s
+
+  cache:
+    image: docker.io/redis:8@sha256:1f073813b641755b70b0200da64131bbeeb4ec5b633ca67772229b49820caafa
+    healthcheck:
+      test: [ "CMD-SHELL", "[ $$(redis-cli ping) = 'PONG' ]" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_interval: 5s
+      start_period: 30s
+
+  directus:
+    image: docker.io/directus/directus:11.17@sha256:5e5978377f1cc9820ffc5b92597da1573a1350ea57f8aba42efd999139993874
+    # image: container.registry.foldland.io/debacode/bund-fib/bund-fib-master-table:v1.0.2
+    ports:
+      - ${DIRECTUS_PORT}:8055
+    volumes:
+      - ${UPLOADS_VOLUME:-./uploads}:/directus/uploads
+      - ${EXTENSIONS_VOLUME:-./extensions}:/directus/extensions
+      # Local extension development
+      - ../:/directus/extensions/@foldland-directus-nextjs-blurhash
+    depends_on:
+      database:
+        condition: service_healthy
+      cache:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      SECRET: ${DIRECTUS_SECRET}
+
+      DB_CLIENT: "pg"
+      DB_HOST: "database"
+      DB_PORT: "5432"
+
+      CACHE_STORE: "redis"
+      REDIS: "redis://cache:6379"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  extensions:
+  uploads:
+  database:

@@ -28,12 +28,17 @@
     "build": "directus-extension build",
     "check": "pnpm format:check && pnpm lint:check && pnpm typecheck",
     "dev": "directus-extension build -w --no-minify",
-    "format:check": "biome check --formatter-enabled=true --linter-enabled=false --assist-enabled=false ",
+    "format:check": "biome check --formatter-enabled=true --linter-enabled=false --assist-enabled=false",
     "format:write": "biome format --write",
-    "link": "directus-extension link",
+    "generate:types": "directus-sdk-typegen -u \"$(grep -v \"#\" .env | grep DIRECTUS_URL .env | cut -d \"=\" -f2 | xargs)\" -t \"$(grep -v \"#\" .env | grep ADMIN_TOKEN .env | cut -d \"=\" -f2 | xargs)\" -o ./src/testing/directus-schema.ts",
+    "generate": "pnpm generate:types",
+    "link": "directus-extension link directus/extensions",
     "lint:check": "biome check --formatter-enabled=false --linter-enabled=true --assist-enabled=true",
     "lint:write": "pnpm lint:check --write",
-    "test": "",
+    "test:e2e": "vitest run --coverage --project e2e",
+    "test:unit": "vitest run --coverage --project unit",
+    "test:watch": "vitest run --watch",
+    "test": "vitest run --coverage",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
@@ -42,11 +47,17 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.12",
     "@debacode-public/biome-configs": "1.1.2",
+    "@directus/sdk": "21.2.2",
     "@directus/types": "15.0.2",
     "@types/node": "24.12.2",
+    "@vitest/coverage-v8": "4.1.4",
+    "directus-sdk-typegen": "0.2.1",
+    "dotenv": "17.4.2",
     "pino": "9.7.0",
     "sharp": "0.34.5",
-    "typescript": "6.0.3"
+    "typescript": "6.0.3",
+    "vitest": "4.1.4",
+    "vitest-mock-extended": "4.0.0"
   },
   "devEngines": {
     "runtime": {

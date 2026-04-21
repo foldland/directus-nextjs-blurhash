@@ -13,6 +13,9 @@ include:
   - project: tools/shared-pipelines
     ref: v6.0.3
     file: /nodejs/nodejs.yaml
+  - project: tools/shared-pipelines
+    ref: v6.0.3
+    file: /docker/docker.yaml
 
 # Prepare
 prepare-precache:
@@ -38,14 +41,48 @@ analysis-format:
 analysis-typescript:
   extends: .analysis-nodejs-typescript
 
+# Build
 build:
   extends: .build-nodejs-pnpm
 
-publish-preview:
+build-npm:
+  needs:
+    - build
+  stage: build
   extends: .publish-nodejs-pnpm-preview
 
-publish-production:
+build-docker:
+  needs:
+    - build
+  stage: build
+  extends: .publish-docker-preview
+  variables:
+    DOCKERFILE: Dockerfile
+
+# Test
+test:
+  variables:
+    ADMIN_EMAIL: "admin@example.com"
+    ADMIN_PASSWORD: "d1r3ctu5"
+    DIRECTUS_URL: "http://directus:8055"
+  services:
+    - name: container-cache.registry.foldland.io/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/preview:$CI_COMMIT_SHORT_SHA
+      alias: directus
+  before_script:
+    - !reference [ .setup-nodejs-pnpm, before_script ]
+    # setup .env
+    - printenv > .env
+    - bash tools/generate_tokens.sh
+  extends: .test-nodejs-vitest
+
+# Publish
+publish-npm-production:
   extends: .publish-nodejs-pnpm-production
+
+publish-container-production:
+  extends: .publish-docker-production
+  variables:
+    DOCKERFILE: Dockerfile
 
 # Release
 release-prepare-mr:

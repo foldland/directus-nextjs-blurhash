@@ -1,6 +1,9 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["@debacode-public/biome-configs/base"],
+  "files": {
+    "includes": ["!src/testing/directus-schema.ts"]
+  },
   "overrides": [
     {
       "includes": ["src/**"],
@@ -14,6 +17,16 @@
           },
           "correctness": {
             "noNodejsModules": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["test/**/*.e2e-spec.ts", "**/*.spec.ts"],
+      "linter": {
+        "rules": {
+          "style": {
+            "noMagicNumbers": "off"
           }
         }
       }
