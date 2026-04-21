@@ -1,8 +1,8 @@
 {
   "name": "directus-nextjs-blurhash",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  //"image": "mcr.microsoft.com/devcontainers/typescript-node",
-  "build": { "dockerfile": "Dockerfile" },
+  "dockerComposeFile": ["../directus/compose.yaml", "compose.extend.yml"],
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces",
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
@@ -29,6 +29,7 @@
         "gitlab.gitlab-workflow",
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker",
+        "vitest.explorer",
         "YoavBls.pretty-ts-errors"
       ]
     }
