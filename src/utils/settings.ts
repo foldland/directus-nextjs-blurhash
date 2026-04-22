@@ -1,4 +1,5 @@
 import type { AbstractService, Field, Type } from '@directus/types'
+import type { Logger } from 'pino'
 import type { DirectusSettings } from '@/utils/directus-schema.ts'
 import {
   blurhash,
@@ -39,7 +40,8 @@ async function upsertField(
     collection: string
     field: string
     type: Type | null
-  }
+  },
+  logger: Logger
 ): Promise<void> {
   const found = await fieldsService
     .readOne(field.collection, field.field)
@@ -53,8 +55,8 @@ async function upsertField(
     }
 
     await fieldsService.createField(field.collection, field)
-  } catch {
-    return
+  } catch (error) {
+    logger.error(`blurhash: Error updating settings: ${error}`)
   }
 }
 
@@ -63,15 +65,18 @@ async function upsertField(
  *
  * @param fieldsService - The service for managing fields.
  */
-export async function applySettings(fieldsService: FieldsService) {
+export async function applySettings(
+  fieldsService: FieldsService,
+  logger: Logger
+) {
   // directus_filed
-  await upsertField(fieldsService, blurhash)
+  await upsertField(fieldsService, blurhash, logger)
   // directus_settings
-  await upsertField(fieldsService, blurSize)
-  await upsertField(fieldsService, format)
-  await upsertField(fieldsService, generationChunkSize)
-  await upsertField(fieldsService, regenerateOnStart)
-  await upsertField(fieldsService, generateMissingOnStart)
+  await upsertField(fieldsService, blurSize, logger)
+  await upsertField(fieldsService, format, logger)
+  await upsertField(fieldsService, generationChunkSize, logger)
+  await upsertField(fieldsService, regenerateOnStart, logger)
+  await upsertField(fieldsService, generateMissingOnStart, logger)
 }
 
 /**
@@ -82,7 +87,8 @@ export async function applySettings(fieldsService: FieldsService) {
  * @returns The value of the setting, or null if not found.
  */
 export async function getSetting(
-  service: AbstractService<DirectusSettings>
+  service: AbstractService<DirectusSettings>,
+  logger: Logger
 ): Promise<BlurhashSettings> {
   const settings = Object.values(settingsFields)
 
@@ -106,7 +112,9 @@ export async function getSetting(
         result.blurhasher_generate_missing_on_start ??
         settingsDefaults.generateMissingOnStart,
     }
-  } catch {
+  } catch (error) {
+    logger.error(`blurhash: Error reading settings: ${error}`)
+
     return settingsDefaults
   }
 }

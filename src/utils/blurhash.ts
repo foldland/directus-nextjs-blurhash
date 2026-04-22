@@ -1,4 +1,5 @@
 import { Buffer } from 'node:buffer'
+import type { Logger } from 'pino'
 import type { AssetsService, BlurhashSettings } from './types'
 
 /**
@@ -26,7 +27,8 @@ export const supportedMimeTypes = [
 export async function generateBlurHash(
   key: string,
   assetsService: AssetsService,
-  settings: BlurhashSettings
+  settings: BlurhashSettings,
+  logger: Logger
 ): Promise<string | undefined> {
   try {
     const { stream } = await assetsService.getAsset(key, {
@@ -44,9 +46,10 @@ export async function generateBlurHash(
     const buffer = Buffer.concat(chunks)
     const blurImageBase64 = buffer.toString('base64')
     const blurHash = `data:image/${settings.format};base64,${blurImageBase64}`
+    logger.trace(`blurhash: generated ${blurHash} for image ${key}`)
 
     return blurHash
-  } catch {
-    return
+  } catch (error) {
+    logger.error(`blurhash: Error generating blurhash: ${error}`)
   }
 }
