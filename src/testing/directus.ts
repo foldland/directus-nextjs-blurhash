@@ -5,9 +5,11 @@ import {
   readFile,
   readFiles,
   rest,
+  type DirectusSettings as SDKSettings,
+  updateSettings,
   uploadFiles,
 } from '@directus/sdk'
-import type { Schema } from '../utils/directus-schema'
+import type { DirectusSettings, Schema } from '@/utils/directus-schema'
 import { env } from './env'
 import { getImageFile, type ImageFormat } from './image'
 
@@ -26,7 +28,8 @@ export async function getBlurhash(id: string) {
     })
   )
 
-  return file.blurhash
+  // biome-ignore lint/style/noNonNullAssertion: We always expect a blur in our tests
+  return file.blurhash!
 }
 
 export async function uploadImage(path: string, format?: ImageFormat) {
@@ -52,4 +55,10 @@ export async function cleanupFiles() {
     return client.request(deleteFile(file.id))
   })
   await Promise.all(deletions)
+}
+
+export async function applySettings(
+  settings: Partial<DirectusSettings & SDKSettings>
+) {
+  await client.request(updateSettings(settings))
 }
