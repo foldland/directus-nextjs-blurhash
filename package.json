@@ -30,7 +30,7 @@
     "dev": "directus-extension build -w --no-minify",
     "format:check": "biome check --formatter-enabled=true --linter-enabled=false --assist-enabled=false",
     "format:write": "biome format --write",
-    "generate:types": "directus-sdk-typegen -u \"$(grep -v \"#\" .env | grep DIRECTUS_URL .env | cut -d \"=\" -f2 | xargs)\" -t \"$(grep -v \"#\" .env | grep ADMIN_TOKEN .env | cut -d \"=\" -f2 | xargs)\" -o ./src/testing/directus-schema.ts",
+    "generate:types": "directus-sdk-typegen -u \"$(grep -v \"#\" .env | grep DIRECTUS_URL .env | cut -d \"=\" -f2 | xargs)\" -t \"$(grep -v \"#\" .env | grep ADMIN_TOKEN .env | cut -d \"=\" -f2 | xargs)\" -o ./src/utils/directus-schema.ts",
     "generate": "pnpm generate:types",
     "link": "directus-extension link directus/extensions",
     "lint:check": "biome check --formatter-enabled=false --linter-enabled=true --assist-enabled=true",

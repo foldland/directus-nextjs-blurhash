@@ -6,7 +6,7 @@ useGitignore: true
 enableGlobDot: false
 ignorePaths:
   - pnpm-lock.yaml
-  - src/testing/directus-schema.ts
+  - src/utils/directus-schema.ts
 dictionaries:
   # cspell - https://github.com/streetsidesoftware/cspell-dicts
   - "bash"

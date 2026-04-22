@@ -1,6 +1,29 @@
 import fs from 'node:fs/promises'
 import sharp from 'sharp'
 
+const DATA_URI_REGEX = /^data:(.+\/.+);base64,(.*)$/
+
+export async function decodeDataUri(dataURI: string) {
+  const matches = dataURI.match(DATA_URI_REGEX)
+  /* v8 ignore if -- @preserve */
+  if (!matches) {
+    return
+  }
+
+  const mimeType = matches[1]
+  const data = matches[2]
+  /* v8 ignore if -- @preserve */
+  if (!mimeType || !data) {
+    return
+  }
+
+  const byteString = Buffer.from(data, 'base64')
+  // new Blob([byteString], { type: mimeType })
+
+  const image = sharp(byteString)
+  return await image.metadata()
+}
+
 export type ImageFormat =
   | 'avif'
   | 'gif'

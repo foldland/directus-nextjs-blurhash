@@ -29,6 +29,8 @@ export default defineConfig({
         extends: true,
         test: {
           include: ['test/**/*.e2e-spec.ts'],
+          // We test against a single directus instance.
+          fileParallelism: false,
           name: 'e2e',
         },
       },

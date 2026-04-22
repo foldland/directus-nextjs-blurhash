@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "extends": ["@debacode-public/biome-configs/base"],
   "files": {
-    "includes": ["!src/testing/directus-schema.ts"]
+    "includes": ["!src/utils/directus-schema.ts"]
   },
   "overrides": [
     {
