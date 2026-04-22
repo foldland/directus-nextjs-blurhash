@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.1.0](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/compare/v1.0.3..v1.1.0) - 2026-04-22
+
+### ✨ New Features & Improvements
+
+- allow adjustable blur format - ([71375d8](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/71375d8b45ccabb57817601b987466702d05942c)) - @Nikolas Rimikis
+- add logging - ([99e75b9](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/99e75b9099a694148a7e7c386fd3e4c96354e5da)) - @nikolas.rimikis
+
+### 🔨 Refactoring
+
+- restructure the code - ([61f1fac](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/61f1fac85edd8aac972effe764e3d0bf2c716c56)) - @nikolas.rimikis
+
+### 🚨 Tests
+
+- unit test format and blur size - ([0e05e70](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/commit/0e05e708d1678ae92c0f9dd2dc638c4732a629f9)) - @nikolas.rimikis
+
+
+
+
+#### Statistics
+- 4 commit(s) contributed to the release.
+- 0 day(s) passed between the first and last commit.
+- 4 commit(s) parsed as conventional.
+- 0 linked issue(s) detected in commits.
+- 1 day(s) passed between releases.
+---
 ## [1.0.3](https://gitlab.debacode.de/tools/directus-nextjs-blurhash/compare/v1.0.2..v1.0.3) - 2026-04-21
 
 ### 🐛 Bug Fixes & Optimizations
