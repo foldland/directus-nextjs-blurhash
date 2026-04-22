@@ -1,16 +1,13 @@
 import type { AbstractService } from '@directus/types'
-import {
-  generateBlurHashFromStream,
-  supportedMimeTypes,
-} from './utils/blurhash.ts'
+import { generateBlurHash, supportedMimeTypes } from './utils/blurhash.ts'
 import type { DirectusFile, DirectusSettings } from './utils/directus-schema.ts'
-import { getSetting, runMigration } from './utils/settings.ts'
+import { applySettings, getSetting } from './utils/settings.ts'
 import type { AssetsService, FieldsService } from './utils/types.ts'
 
 export async function routesCustomInitBefore(
   fieldsService: FieldsService
 ): Promise<void> {
-  await runMigration(fieldsService)
+  await applySettings(fieldsService)
 }
 
 /**
@@ -24,46 +21,50 @@ export async function routesCustomInitAfter(
   itemsService: AbstractService<DirectusFile>,
   settingsService: AbstractService<DirectusSettings>
 ): Promise<void> {
-  const is_regenerate = await getSetting(settingsService, 'regenerate')
-  if (!is_regenerate) {
+  const settings = await getSetting(settingsService)
+
+  if (!settings.generateMissingOnStart && !settings.regenerateOnStart) {
     return
   }
 
   try {
-    const files = await itemsService.readByQuery({
-      fields: ['id'], // Specifying that only the 'id' field is needed from each record.
+    const images = await itemsService.readByQuery({
+      fields: ['id'],
       filter: {
-        type: {
-          _in: supportedMimeTypes,
+        _and: {
+          type: {
+            _in: supportedMimeTypes,
+          },
+          blurhash: settings.generateMissingOnStart
+            ? {}
+            : {
+                _null: true,
+              },
         },
       },
       limit: -1,
     })
 
-    for (const file of files) {
-      /**
-       * Retrieving the image stream for the current file with specified transformation parameters.
-       */
-      try {
-        // biome-ignore lint/performance/noAwaitInLoops: needed here
-        const { stream } = await assetsService.getAsset(file.id, {
-          transformationParams: {
-            quality: 80,
-            width: 100,
-            fit: 'inside',
-          },
-        })
+    const chunkSize = settings.generationChunkSize
+    for (let i = 0; i < images.length; i += chunkSize) {
+      const chunk = images.slice(i, i + chunkSize).map(async (file) => {
+        try {
+          const blurHash = await generateBlurHash(
+            file.id,
+            assetsService,
+            settings
+          )
 
-        /**
-         * Generating a new BlurHash string from the image stream.
-         */
-        const blurHash = await generateBlurHashFromStream(stream)
+          await itemsService.updateOne(file.id, { blurhash: blurHash })
+        } catch {}
+      })
 
-        await itemsService.updateOne(file.id, { blurhash: blurHash })
-      } catch {}
+      // biome-ignore lint/performance/noAwaitInLoops: we need chunking to avoid an OOM
+      await Promise.all(chunk)
     }
   } catch {
+    return
   } finally {
-    settingsService.upsertSingleton({ blurhasher_regenerate_on_restart: false })
+    settingsService.upsertSingleton({ blurhasher_regenerate_on_start: false })
   }
 }

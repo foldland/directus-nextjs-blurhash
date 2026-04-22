@@ -283,10 +283,16 @@ export interface DirectusSettings {
 	ai_anthropic_allowed_models?: Array<`claude-haiku-4-5` | `claude-sonnet-4-5` | `claude-opus-4-5` | `claude-sonnet-4-6` | `claude-opus-4-6`> | null;
 	ai_google_allowed_models?: Array<`gemini-3-pro-preview` | `gemini-3-flash-preview` | `gemini-2.5-pro` | `gemini-2.5-flash` | `gemini-3.1-pro-preview` | `gemini-3.1-flash-lite-preview` | `gemini-2.5-flash-lite`> | null;
 	collaborative_editing_enabled?: boolean;
-	/** @description This parameter determines the detail level in the BlurHash, affecting its complexity and length from high (detailed) to low (abstract). */
-	blurhasher_detail_level?: 'high' | 'medium' | 'low' | null;
-	/** @description Enables regeneration of all BlurHashes for illustrations upon system restart. */
-	blurhasher_regenerate_on_restart?: boolean | null;
+	/** @description Height of the output image. Output images are always scaled, keeping their aspect ratio. @required */
+	blurhasher_blur_size: number;
+	/** @description Format of the output image (blur) @required */
+	blurhasher_format: 'jpeg' | 'png' | 'webp' | 'avif';
+	/** @description Chunks size for batch blur generation. Used on on start when images have no blurData or regenerate is enabled. @required */
+	blurhasher_generation_chunk_size: number;
+	/** @description Force regenerates all images on start. @required */
+	blurhasher_regenerate_on_start: boolean;
+	/** @description Generate blur data when missing. @required */
+	blurhasher_generate_missing_on_start: boolean;
 }
 
 export interface DirectusUser {
