@@ -1,14 +1,13 @@
-import type { FieldMeta, FieldRaw } from '@directus/types'
+import type { AbstractService, Field, Type } from '@directus/types'
+import type { DirectusSettings } from '@/utils/directus-schema.ts'
+import type { FieldsService } from './types.ts'
 
-export interface FieldRawBlurhash extends Omit<FieldRaw, 'meta'> {
-  meta: Omit<FieldMeta, 'id'>
-}
-
-export const directus_files_blurhash: FieldRawBlurhash = {
+const directus_files_blurhash = {
   collection: 'directus_files',
   field: 'blurhash',
   type: 'string',
   meta: {
+    id: Number.NaN,
     searchable: false,
     collection: 'directus_files',
     field: 'blurhash',
@@ -47,13 +46,14 @@ export const directus_files_blurhash: FieldRawBlurhash = {
     foreign_key_table: null,
     is_indexed: false,
   },
-}
+} as const
 
-export const settings_detail_level: FieldRawBlurhash = {
+const settings_detail_level = {
   collection: 'directus_settings',
   field: 'blurhasher_detail_level',
   type: 'string',
   meta: {
+    id: Number.NaN,
     searchable: false,
     collection: 'directus_settings',
     field: 'blurhasher_detail_level',
@@ -98,17 +98,18 @@ export const settings_detail_level: FieldRawBlurhash = {
     foreign_key_table: null,
     is_indexed: false,
   },
-}
+} as const
 
-export const settings_regenerate: FieldRawBlurhash = {
+const settings_regenerate = {
   collection: 'directus_settings',
   field: 'blurhasher_regenerate_on_restart',
   type: 'boolean',
   meta: {
+    id: Number.NaN,
     searchable: false,
     collection: 'directus_settings',
     field: 'blurhasher_regenerate_on_restart',
-    special: ['cast-boolean'],
+    special: ['cast-boolean'] as Array<string>,
     interface: 'boolean',
     options: null,
     display: null,
@@ -143,4 +144,71 @@ export const settings_regenerate: FieldRawBlurhash = {
     foreign_key_table: null,
     is_indexed: false,
   },
+} as const
+
+const settingsFields = {
+  detail_level: settings_detail_level.field,
+  regenerate: settings_regenerate.field,
+}
+
+/**
+ * Ensures the existence of a field in Directus.
+ * If the field does not exist, it creates the field using the provided field configuration.
+ *
+ * @param fieldsService - The Directus fields service.
+ * @param field - The field configuration to ensure.
+ * @param logger - The logger instance for logging messages.
+ */
+async function ensureField(
+  fieldsService: FieldsService,
+  field: Partial<Field> & {
+    collection: string
+    field: string
+    type: Type | null
+  }
+): Promise<void> {
+  const found = await fieldsService
+    .readOne(field.collection, field.field)
+    .catch(() => {
+      return undefined
+    })
+
+  if (found) {
+    return
+  }
+
+  await fieldsService.createField(field.collection, field)
+}
+
+/**
+ * Runs the migration process.
+ *
+ * @param fieldsService - The service for managing fields.
+ * @param logger - The logger for logging messages.
+ */
+export async function runMigration(fieldsService: FieldsService) {
+  await ensureField(fieldsService, directus_files_blurhash)
+  await ensureField(fieldsService, settings_detail_level)
+  await ensureField(fieldsService, settings_regenerate)
+}
+
+/**
+ * Retrieves a setting value from a service.
+ * @param service - The service to retrieve the setting from.
+ * @param field - The name of the setting field.
+ * @param logger - Logger instance for logging progress and errors.
+ * @returns The value of the setting, or null if not found.
+ */
+export async function getSetting(
+  service: AbstractService<DirectusSettings>,
+  field: 'detail_level' | 'regenerate'
+): Promise<unknown | null> {
+  try {
+    const setting = settingsFields[field]
+
+    const found = await service.readSingleton({ fields: [setting] })
+    return found[setting]
+  } catch {
+    return null
+  }
 }

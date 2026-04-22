@@ -7,7 +7,7 @@ import {
   rest,
   uploadFiles,
 } from '@directus/sdk'
-import type { Schema } from './directus-schema'
+import type { Schema } from '../utils/directus-schema'
 import { env } from './env'
 import { getImageFile, type ImageFormat } from './image'
 

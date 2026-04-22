@@ -1,135 +1,70 @@
 import { defineHook } from '@directus/extensions-sdk'
-import { generateBlurHashFromStream } from './blurhash.ts'
-import { settings_detail_level, settings_regenerate } from './fields.ts'
-import { runMigration } from './migration.ts'
-import { regenerateAllImages } from './regenerate.ts'
-import { getSetting } from './util.ts'
+import type { AbstractService } from '@directus/types'
+import { fileUploadAction } from './file_upload_action.ts'
+import {
+  routesCustomInitAfter,
+  routesCustomInitBefore,
+} from './routes_custom_init.ts'
+import {
+  CollectionNames,
+  type DirectusFile,
+  type DirectusSettings,
+} from './utils/directus-schema.ts'
 
 const hook = defineHook(
-  ({ action, init }, { services, database, getSchema, logger }) => {
+  ({ action, init }, { services, database, getSchema }) => {
     const { AssetsService, ItemsService, FieldsService, SettingsService } =
       services
 
-    /**
-     * Extension initialization hook.
-     * This hook is called when the extension is loaded.
-     */
-    init('routes.custom.after', async () => {
-      logger.info('[blurhasher]: Initializing extension')
+    init('routes.custom.before', async () => {
       const schema = await getSchema()
-      const fieldsService = new FieldsService({
+      const options = {
         knex: database,
         schema: schema,
-      })
-      /**
-       * Migration
-       */
-      await runMigration(fieldsService)
-      logger.info('[blurhasher]: migration run')
-
-      const settings = new SettingsService({ schema: schema, knex: database })
-
-      const is_regenerate = await getSetting(
-        settings,
-        settings_regenerate.field,
-        logger
-      )
-      if (!is_regenerate) {
-        return
       }
-      /**
-       * Regenerate all blurhashes if the setting is enabled.
-       */
-      try {
-        logger.info('[blurhasher]: Regenerating blurhashes')
 
-        const itemsService = new ItemsService('directus_files', {
-          knex: database,
-          schema: schema,
-        })
-        const assetsService = new AssetsService({
-          knex: database,
-          schema: schema,
-        })
-        await regenerateAllImages(itemsService, assetsService, logger)
-        logger.info('[blurhasher]: Regeneration complete')
-      } catch (error) {
-        logger.error(
-          `[blurhasher]: An error occurred while regenerating blurhashes: ${error}`
-        )
-      } finally {
-        settings.upsertSingleton({ blurhasher_regenerate_on_restart: false })
-      }
+      const fieldsService = new FieldsService(options)
+
+      await routesCustomInitBefore(fieldsService)
     })
 
-    /**
-     * Action hook for the `files.upload` action.
-     * This hook is called when a file is uploaded to Directus.
-     */
-    action('files.upload', async ({ payload, key }, context) => {
-      if (
-        ![
-          'image/jpeg',
-          'image/png',
-          'image/webp',
-          'image/tiff',
-          'image/avif',
-        ].includes(payload.type)
-      ) {
-        // Skip non-image files
-        return
+    init('routes.custom.after', async () => {
+      const schema = await getSchema()
+      const options = {
+        knex: database,
+        schema: schema,
       }
 
-      const schema = await getSchema()
+      const assetsService = new AssetsService(options)
+      const itemsService = new ItemsService<DirectusFile>(
+        CollectionNames.directus_files,
+        options
+      )
+      const settingsService = new SettingsService(
+        options
+      ) as AbstractService<DirectusSettings>
 
-      const assetsService = new AssetsService({
-        ...context,
-        knex: context.database,
-        schema: schema,
-      })
+      await routesCustomInitAfter(assetsService, itemsService, settingsService)
+    })
 
-      const itemsService = new ItemsService('directus_files', {
+    action('files.upload', async (meta, context) => {
+      const schema = context.schema ?? (await getSchema())
+      const options = {
         knex: database,
         schema: schema,
-      })
+      }
+      const assetsService = new AssetsService(options)
 
-      const settings = new SettingsService({
-        knex: database,
-        schema: schema,
-      })
-
-      const detail_level = await getSetting(
-        settings,
-        settings_detail_level.field,
-        logger
+      const itemsService = new ItemsService<DirectusFile>(
+        CollectionNames.directus_files,
+        options
       )
 
-      let size = 0
-      switch (detail_level) {
-        case 'low':
-          size = 16
-          break
-        case 'high':
-          size = 64
-          break
-        default:
-          // Default value for medium detail
-          size = 32
-      }
+      const settings = new SettingsService(
+        options
+      ) as AbstractService<DirectusSettings>
 
-      const { stream } = await assetsService.getAsset(key, {
-        transformationParams: {
-          quality: 100,
-          height: size,
-          width: size,
-          format: 'png',
-          fit: 'inside',
-        },
-      })
-
-      const blurHash = await generateBlurHashFromStream(stream, logger)
-
-      itemsService.updateOne(key, { blurhash: blurHash })
+      await fileUploadAction(meta, assetsService, itemsService, settings)
     })
   }
 )
