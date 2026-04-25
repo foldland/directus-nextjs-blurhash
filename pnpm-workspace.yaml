@@ -21,6 +21,10 @@ hoist: false
 hoistWorkspacePackages: false
 verifyDepsBeforeRun: "install"
 
+# avoid including the linked extension
+packages:
+  - "!directus/**"
+
 overrides:
   # broken directus peers
   "@vitejs/plugin-vue@6.0.1": ^6.0.3
