@@ -68,7 +68,7 @@
     "packageManager": [
       {
         "name": "pnpm",
-        "version": "10.33.0",
+        "version": "10.33.2",
         "onFail": "download"
       },
       {
