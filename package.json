@@ -35,10 +35,9 @@
     "link": "directus-extension link directus/extensions",
     "lint:check": "biome check --formatter-enabled=false --linter-enabled=true --assist-enabled=true",
     "lint:write": "pnpm lint:check --write",
+    "test:all": "vitest run --coverage",
     "test:e2e": "vitest run --coverage --project e2e",
-    "test:unit": "vitest run --coverage --project unit",
-    "test:watch": "vitest run --watch",
-    "test": "vitest run --coverage",
+    "test": "vitest run --coverage --project unit",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
