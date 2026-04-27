@@ -45,8 +45,8 @@
     "@directus/extensions-sdk": "^17.0.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.12",
-    "@debacode-public/biome-configs": "1.1.2",
+    "@biomejs/biome": "2.4.13",
+    "@debacode-public/biome-configs": "1.1.3",
     "@directus/sdk": "21.2.2",
     "@directus/types": "15.0.2",
     "@types/node": "24.12.2",
