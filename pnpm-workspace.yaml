@@ -1,9 +1,11 @@
+# Dependency age
 minimumReleaseAge: 4320 # 3 days - same as renovate
 minimumReleaseAgeExclude:
-    - "@debacode-public/*"
-    - lodash-es@4.17.24
-    - axios@1.15.2
-    - fast-xml-builder@1.1.7
+    - "@foldland/*"
+
+registries:
+    default: https://registry.npmjs.org/
+    "@foldland": https://npm.registry.foldland.io
 
 # Dependency resolution
 savePrefix: "^"
