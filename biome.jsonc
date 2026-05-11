@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["@debacode-public/biome-configs/base"],
+  "extends": ["@foldland/biome-configs/base"],
   "files": {
     "includes": ["!src/utils/directus-schema.ts"]
   },
