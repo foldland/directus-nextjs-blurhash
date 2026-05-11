@@ -28,7 +28,7 @@ services:
       start_period: 30s
 
   cache:
-    image: docker.io/redis:8@sha256:832d7785830f3f4b559300e6191fc914b15642c1935252338825cf4332200148
+    image: docker.io/redis:8@sha256:0c341492924cad6f5483f9133e43bd6c51ecdecbcadfac5b51657393b6a7936c
     healthcheck:
       test: [ "CMD-SHELL", "[ $$(redis-cli ping) = 'PONG' ]" ]
       interval: 10s
