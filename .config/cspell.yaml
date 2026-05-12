@@ -19,10 +19,10 @@ dictionaries:
   - "project"
   - "project-tools"
   # custom
-  - "debacode"
-  - "debacode-tools"
-  - "debacode-nodejs"
-  - "debacode-nodejs-tools"
+  - "foldland"
+  - "foldland-tools"
+  - "foldland-nodejs"
+  - "foldland-nodejs-tools"
 dictionaryDefinitions:
   # project
   - name: "project"
@@ -30,12 +30,12 @@ dictionaryDefinitions:
   - name: "project-tools"
     path: cspell/project-tools.txt
   # base
-  - name: "debacode"
-    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.25.0/base/misc.txt
-  - name: "debacode-tools"
-    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.25.0/base/tools.txt
+  - name: "foldland"
+    path: https://cspell.foldland.io/v1.25.0/base/misc.txt
+  - name: "foldland-tools"
+    path: https://cspell.foldland.io/v1.25.0/base/tools.txt
   # nodejs
-  - name: "debacode-nodejs"
-    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.25.0/nodejs/language.txt
-  - name: "debacode-nodejs-tools"
-    path: https://gitlab.debacode.de/debacode-public/cspell-dictionaries/-/raw/v1.25.0/nodejs/tools.txt
+  - name: "foldland-nodejs"
+    path: https://cspell.foldland.io/v1.25.0/nodejs/language.txt
+  - name: "foldland-nodejs-tools"
+    path: https://cspell.foldland.io/v1.25.0/nodejs/tools.txt
