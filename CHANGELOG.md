@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.1.2](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.1..v1.1.2) - 2026-05-18
+
+### 👷 Continuous Integration
+
+- fix e2e-test timeout - ([79aa8f1](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/79aa8f120c975265786dcc6dfa93083ca1ae7e2e)) - @nikolas.rimikis
+
+### 🔧 Chores
+
+- **(deps)** update vitest monorepo to v4.1.6 - ([aa83fbf](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/aa83fbfbb12cc2ee49c15fe54e72af3ff9f68929)) - @renovate
+- **(deps)** update dependency @biomejs/biome to v2.4.15 - ([736b80e](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/736b80e55474bf16fdabde2f1e765c3cbb2a9105)) - @renovate
+- **(deps)** update docker.io/postgis/postgis:18-master docker digest to bf08586 - ([5a08c85](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/5a08c859ca0ec0df40284e2c3d772f3b4c9e773a)) - @renovate
+- **(deps)** update dependency @types/node to v24.12.4 - ([3fea26d](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/3fea26d51b01ad7c18da5272232fdf13426ce979)) - @renovate
+- **(deps)** update dependency pnpm to v11.1.2 - ([cefd818](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/cefd81843619f8272a4e7f747f7056e00adf1aa8)) - @renovate
+
+
+
+
+#### Statistics
+- 6 commit(s) contributed to the release.
+- 0 day(s) passed between the first and last commit.
+- 6 commit(s) parsed as conventional.
+- 0 linked issue(s) detected in commits.
+- 7 day(s) passed between releases.
+---
 ## [1.1.1](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.0..v1.1.1) - 2026-05-11
 
 ### 👷 Continuous Integration
