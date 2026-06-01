@@ -44,7 +44,7 @@
     "@directus/extensions-sdk": "^17.0.4"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.15",
+    "@biomejs/biome": "2.4.16",
     "@directus/sdk": "21.3.0",
     "@directus/types": "15.0.3",
     "@foldland/biome-configs": "1.1.5",
