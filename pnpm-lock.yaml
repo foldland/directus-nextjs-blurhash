@@ -26,8 +26,8 @@ importers:
         specifier: 21.3.0
         version: 21.3.0
       '@directus/types':
-        specifier: 15.0.3
-        version: 15.0.3(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))
+        specifier: 16.0.0
+        version: 16.0.0(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))
       '@foldland/biome-configs':
         specifier: 1.1.6
         version: 1.1.6(@biomejs/biome@2.5.1)
@@ -277,6 +277,9 @@ packages:
   '@directus/ai@1.3.1':
     resolution: {integrity: sha512-OuQwQtx6wDQp7rAvF/pIV6jo1svPu3mZ769tJLC/nqO2dMZxfyYcFQ4Gr1ip4SoVfPLbyEpWTMHvgafvVsAmLA==}
 
+  '@directus/ai@1.3.2':
+    resolution: {integrity: sha512-HUCU24/MGcUP25T1O72IQM21vUqsA4/SjG83CmdpVfz9MJJGfq61qdi0ImLFMNsYSKE10lHhGwlRGsE+NejKUA==}
+
   '@directus/composables@11.4.0':
     resolution: {integrity: sha512-OSoYHdn0fWjytajt8q63SpQAOtNCJR0YoF2w9EllfECMpE3dM6S3BsFJYrIKF8EM2DCpPSATRw5otyKVIc46QQ==}
     peerDependencies:
@@ -284,6 +287,9 @@ packages:
 
   '@directus/constants@14.3.0':
     resolution: {integrity: sha512-mf4CEm0q/pVlfbkvFc2JuCpas4BJS6ldLtYqLUA1uqzBJg1eP7OWxp6DF27kZmNeDUgN1Wbzbt9TI3qTJMd8FA==}
+
+  '@directus/constants@14.4.0':
+    resolution: {integrity: sha512-5/B6XccEc8ml3UZoKpihitrEk7XY1Rwx0QSoAOuvxBzwbTtBahKhY9OnTTIWt8h47Pc5j2djn85S6W+xhzAOXg==}
 
   '@directus/extensions-sdk@17.1.3':
     resolution: {integrity: sha512-8sq2+cd8jyWU1qqtlmFlTUqyUib/Jn3BIQnbM5QFOFs6gsYbl/KfnW/dcenzOI2Sh0rqH6KZavCcux1EhOGGHA==}
@@ -309,6 +315,9 @@ packages:
 
   '@directus/schema@13.0.8':
     resolution: {integrity: sha512-L6SXT83GlLyoxZF16EIXy0TPW/l/YvGvUuuJHHvpwo3CaL+NXLfXXG9lrnYQD4m7IvZquUbXi3orrrTFon/eJg==}
+
+  '@directus/schema@14.0.0':
+    resolution: {integrity: sha512-b0QiePeIxHeAa9gZxv7rxC+YpiL41SldR18xtasKw3xiHjsAhgLIXudjvg15xF7bBFv136mv5r7mNslaTe/lDA==}
 
   '@directus/sdk@21.3.0':
     resolution: {integrity: sha512-ozK2OmlaBiCuP5RuL046CaGGqEnlOdl4Rg690qaOgbC0C45XnDZVeBlb+NDLTUqEj88iSX8Cv74G3qh0L2i7Yw==}
@@ -362,8 +371,8 @@ packages:
       ws:
         optional: true
 
-  '@directus/types@15.0.3':
-    resolution: {integrity: sha512-0M27sbfEjzX5hh1Y8U5c4jU5FtirQsTfYTZvm2DL0XQ9cxklk0JQGrydmIoSaNjXh5VXOnZXkC/jn7RljQm3rA==}
+  '@directus/types@16.0.0':
+    resolution: {integrity: sha512-qWI/ZgbzpHt1exQw3LpV+eFpYCmAflLRf9yW0CRnQZ03fFFypEp14Ja5ZD3tcvpXeOuXqejGyxTI5OkM1aBnAw==}
     peerDependencies:
       deep-diff: 1.0.2
       express: 4.21.2
@@ -3519,6 +3528,8 @@ snapshots:
 
   '@directus/ai@1.3.1': {}
 
+  '@directus/ai@1.3.2': {}
+
   '@directus/composables@11.4.0(vue@3.5.24(typescript@6.0.3))':
     dependencies:
       '@directus/constants': 14.3.0
@@ -3532,6 +3543,8 @@ snapshots:
       - debug
 
   '@directus/constants@14.3.0': {}
+
+  '@directus/constants@14.4.0': {}
 
   '@directus/extensions-sdk@17.1.3(@types/node@24.13.2)(@unhead/vue@1.11.20(vue@3.5.24(typescript@6.0.3)))(knex@3.1.0)(pinia@2.3.1(typescript@6.0.3)(vue@3.5.24(typescript@6.0.3)))(pino@9.7.0)(sharp@0.34.5)(terser@5.46.2)(typescript@6.0.3)':
     dependencies:
@@ -3641,6 +3654,19 @@ snapshots:
       - supports-color
       - tedious
 
+  '@directus/schema@14.0.0':
+    dependencies:
+      knex: 3.1.0
+    transitivePeerDependencies:
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+
   '@directus/sdk@21.3.0': {}
 
   '@directus/system-data@4.4.0': {}
@@ -3683,11 +3709,11 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/types@15.0.3(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))':
+  '@directus/types@16.0.0(knex@3.1.0)(pino@9.7.0)(sharp@0.34.5)(vue@3.5.24(typescript@6.0.3))':
     dependencies:
-      '@directus/ai': 1.3.1
-      '@directus/constants': 14.3.0
-      '@directus/schema': 13.0.8
+      '@directus/ai': 1.3.2
+      '@directus/constants': 14.4.0
+      '@directus/schema': 14.0.0
       '@types/archiver': 7.0.0
       '@types/express': 4.17.21
       '@types/geojson': 7946.0.16
