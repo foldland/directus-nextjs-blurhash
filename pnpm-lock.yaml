@@ -35,8 +35,8 @@ importers:
         specifier: 24.12.4
         version: 24.12.4
       '@vitest/coverage-v8':
-        specifier: 4.1.7
-        version: 4.1.7(vitest@4.1.7)
+        specifier: 4.1.9
+        version: 4.1.9(vitest@4.1.9)
       directus-sdk-typegen:
         specifier: 0.2.1
         version: 0.2.1
@@ -45,7 +45,7 @@ importers:
         version: 17.4.2
       node:
         specifier: runtime:^24.0.0
-        version: runtime:24.16.0
+        version: runtime:24.18.0
       pino:
         specifier: 9.7.0
         version: 9.7.0
@@ -56,11 +56,11 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
       vitest:
-        specifier: 4.1.7
-        version: 4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))
+        specifier: 4.1.9
+        version: 4.1.9(@types/node@24.12.4)(@vitest/coverage-v8@4.1.9)(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))
       vitest-mock-extended:
         specifier: 4.0.0
-        version: 4.0.0(typescript@6.0.3)(vitest@4.1.7)
+        version: 4.0.0(typescript@6.0.3)(vitest@4.1.9)
 
 packages:
 
@@ -1480,20 +1480,20 @@ packages:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
       vue: ^3.2.25
 
-  '@vitest/coverage-v8@4.1.7':
-    resolution: {integrity: sha512-qsYPeXc5Q9dFLd1i8Ap+Bx8sQgcp+rFVQo4R0dDsWNBzl26ldVF1qOO+RL24K7FDrR6pA+50XedRLSoSG24bVQ==}
+  '@vitest/coverage-v8@4.1.9':
+    resolution: {integrity: sha512-G9/lgqibheLVBDRuya45EbsEXTYcWoSG+TLg7i2axuzx0Eq62eXn+aWXyaVdV5vKvFSWd6ywcX8hA7la9Pvu8g==}
     peerDependencies:
-      '@vitest/browser': 4.1.7
-      vitest: 4.1.7
+      '@vitest/browser': 4.1.9
+      vitest: 4.1.9
     peerDependenciesMeta:
       '@vitest/browser':
         optional: true
 
-  '@vitest/expect@4.1.7':
-    resolution: {integrity: sha512-1R+tw0ortHEbZDGMymm+pN7/AFQ/RkFFdtd7EN+VBpynKmLbP8A3rpEXdshBJ7+8hQ9zBJh/i1s0yKNtxAnU7w==}
+  '@vitest/expect@4.1.9':
+    resolution: {integrity: sha512-vl/rYsUKcBr3SnQn166+XR5ZQcgMx3DQhFWdfli/cWpLnLUmbxZvyrJZotLFUryib+LtArYMSTJ5RbQ57ZqrlA==}
 
-  '@vitest/mocker@4.1.7':
-    resolution: {integrity: sha512-vY7nuamKgfvpA1Koa3oYIw/k7D6kZnpGyNMZW8loow2bsBYla1TFdqTaXncWdRn4pgwNs+90RhnXhJScDwQeJA==}
+  '@vitest/mocker@4.1.9':
+    resolution: {integrity: sha512-EVkXzBjrPGM+cK8/ANWgBrkUCfJfb38/EfTSO8h7pWvKkyPkpWxvR7BkD2MyItMF62C97zAEoqdpUixwR/e+Rw==}
     peerDependencies:
       msw: ^2.4.9
       vite: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -1503,20 +1503,20 @@ packages:
       vite:
         optional: true
 
-  '@vitest/pretty-format@4.1.7':
-    resolution: {integrity: sha512-umgCarTOYQWIaDMvGDRZij+6b9oVeLIyJzfN+AS88e0ZOU3QTgNNSTtjQOpcvWr3np1N0j4WgZj+sb3oYBDscw==}
+  '@vitest/pretty-format@4.1.9':
+    resolution: {integrity: sha512-s0iufns3iIFitdgm+YR7g1whCAaGtXz459VS9/PqyKDEEFgYIhsHOQmXgIgDuYCt7DeQmiZT0Qe2OA2p4ZPu5A==}
 
-  '@vitest/runner@4.1.7':
-    resolution: {integrity: sha512-BapjmAQ2aI78WdMEfeUWivnfVzB+VPGwWRQcJE0OUq7qEeEcBsCSf+0T5iREBNE5nBb4wA5Ya0W6IA+sghdEFw==}
+  '@vitest/runner@4.1.9':
+    resolution: {integrity: sha512-KXLMDtc7oe70+3mJfGrPUWPesswH+3sTxAMAMl8DG7I8IUQT4XW718dY5ID3vPUcmlu27CcKfY4P3h3I29SLJg==}
 
-  '@vitest/snapshot@4.1.7':
-    resolution: {integrity: sha512-ZacLzja+TmJeZ1h14xW2FB/WpeimUD3haBXQPyJqxvo8jQTmfeA8zv58mtjN2C7EHXZDYVcVYdYmAxjkWVvKCw==}
+  '@vitest/snapshot@4.1.9':
+    resolution: {integrity: sha512-Jc7RKGNBo8Z28WYIm0Niej4xdSPByRf6mU58VpHQkd6Zh05rlnA+twjbK5HyeIGHxrzsc3mJgS43uM0CZKzaIA==}
 
-  '@vitest/spy@4.1.7':
-    resolution: {integrity: sha512-kbkI5LMWakyuTIvs6fUJ5qdIVb1XVKsYJAT4OJ938cHMROYMSfmoQdZy0aaAnjbbc8F61vkoTqz/Az+/HiIu5Q==}
+  '@vitest/spy@4.1.9':
+    resolution: {integrity: sha512-fHpsS6mIi+PiEW+vcRVOMkX1oSaPKne3VOclSFICPcGOmfKgXPU5iAah+wcNcj2xPrCCmfq99IDGf+EojhhvhA==}
 
-  '@vitest/utils@4.1.7':
-    resolution: {integrity: sha512-T532WBu791cBxJlCl6SO+J14l81DQx6uQHm1bQbmCDY7nqlEIgkza/UFnSBNaUtSf41unldDFjdOBYEQC4b5Hw==}
+  '@vitest/utils@4.1.9':
+    resolution: {integrity: sha512-A51o8ymO5PpqlWNnBP9ZHPXDIpuMtTLlGSjN7la4US+LJzoUMyhwjA5QXlm39JexgwHKW4Xjs8Z2d3dLCXOeuA==}
 
   '@vue/compiler-core@3.5.24':
     resolution: {integrity: sha512-eDl5H57AOpNakGNAkFDH+y7kTqrQpJkZFXhWZQGyx/5Wh7B1uQYvcWkvZi11BDhscPgj8N7XV3oRwiPnx1Vrig==}
@@ -2298,94 +2298,94 @@ packages:
   node-releases@2.0.38:
     resolution: {integrity: sha512-3qT/88Y3FbH/Kx4szpQQ4HzUbVrHPKTLVpVocKiLfoYvw9XSGOX2FmD2d6DrXbVYyAQTF2HeF6My8jmzx7/CRw==}
 
-  node@runtime:24.16.0:
+  node@runtime:24.18.0:
     resolution:
       type: variations
       variants:
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-MN/Y5EMiwnEoE/JeFjwlPK1TvkPgmJB7i1NIvxdKSWg=
+            integrity: sha256-ZGOiNzn2sjAOvsXM1gJ14TjjhY/Br8bo+bxOT2pLdvo=
             type: binary
-            url: https://nodejs.org/download/release/v24.16.0/node-v24.16.0-aix-ppc64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-aix-ppc64.tar.gz
           targets:
             - cpu: ppc64
               os: aix
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-ORidq07rFXBsQkrwrAijBEyeSPfbEqfXf2t6r8fdXfY=
+            integrity: sha256-4al+FMmcgD6WxzOUAyguoFpJnDL42D3v6e9exm+XntE=
             type: binary
-            url: https://nodejs.org/download/release/v24.16.0/node-v24.16.0-darwin-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-darwin-arm64.tar.gz
           targets:
             - cpu: arm64
               os: darwin
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-KYtMezy4B2XIcD5CuQMkpOzjtmNJR7iedpw8mAq1UYU=
+            integrity: sha256-39Db0+chUDQ033tyBecZ9hs6OjGyvPlym4uR/qJA8IA=
             type: binary
-            url: https://nodejs.org/download/release/v24.16.0/node-v24.16.0-darwin-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-darwin-x64.tar.gz
           targets:
             - cpu: x64
               os: darwin
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-WJ9bbdT8/uTf2nMBOQPJZquqir2T28nUNlRORytPDnQ=
+            integrity: sha256-a0SEwhkCdBdd+aqPKOLXWKgZyxwf5qtIHi+VtGOrhQg=
             type: binary
-            url: https://nodejs.org/download/release/v24.16.0/node-v24.16.0-linux-arm64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-arm64.tar.gz
           targets:
             - cpu: arm64
               os: linux
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-JStYIFNNwDBKKFQcmkRDfPpyAufyAiXSjUk5MsWOl6o=
+            integrity: sha256-/hM4ly95KDxrwh5h2/RXa76MBa3tKZnUHIZDrTAmUUI=
             type: binary
-            url: https://nodejs.org/download/release/v24.16.0/node-v24.16.0-linux-ppc64le.tar.gz
+            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-ppc64le.tar.gz
           targets:
             - cpu: ppc64le
               os: linux
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-Vnrwl1s0BVFrmx3cZEKaI+yMWi+mzwE5EmGkzHdOPt0=
+            integrity: sha256-Nx68E5RfwWlJPnUvLdr6+rbs2My0Ubz/RuCfacXdjHo=
             type: binary
-            url: https://nodejs.org/download/release/v24.16.0/node-v24.16.0-linux-s390x.tar.gz
+            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-s390x.tar.gz
           targets:
             - cpu: s390x
               os: linux
         - resolution:
             archive: tarball
             bin: bin/node
-            integrity: sha256-L69qOH6bYriI4hxU8BJJ+ydTf/7PGELyn0yRnQpZoP8=
+            integrity: sha256-eDEwmElj23upy9AQierywu+wVcfBaTyUMXS5Z7MFDLg=
             type: binary
-            url: https://nodejs.org/download/release/v24.16.0/node-v24.16.0-linux-x64.tar.gz
+            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64.tar.gz
           targets:
             - cpu: x64
               os: linux
         - resolution:
             archive: zip
             bin: node.exe
-            integrity: sha256-FINGEdTGs8BgVOcAdzK5BHTBbgsy85XgW1Wlce9xxtI=
-            prefix: node-v24.16.0-win-arm64
+            integrity: sha256-8nRmmtuTsf0Pv48h/QeGCencyEMz1PJxjS3eP5oWGgE=
+            prefix: node-v24.18.0-win-arm64
             type: binary
-            url: https://nodejs.org/download/release/v24.16.0/node-v24.16.0-win-arm64.zip
+            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-win-arm64.zip
           targets:
             - cpu: arm64
               os: win32
         - resolution:
             archive: zip
             bin: node.exe
-            integrity: sha256-7aypvVjsjpIDfaxOh31S9rj0MLgcGLV+JktOL7ERzVY=
-            prefix: node-v24.16.0-win-x64
+            integrity: sha256-CuaEBrQtdyVmHal5sUA+yZJtogXGdwgn8zqsnY8m6CE=
+            prefix: node-v24.18.0-win-x64
             type: binary
-            url: https://nodejs.org/download/release/v24.16.0/node-v24.16.0-win-x64.zip
+            url: https://nodejs.org/download/release/v24.18.0/node-v24.18.0-win-x64.zip
           targets:
             - cpu: x64
               os: win32
-    version: 24.16.0
+    version: 24.18.0
     hasBin: true
 
   npm-run-path@6.0.0:
@@ -3006,20 +3006,20 @@ packages:
       typescript: 3.x || 4.x || 5.x || 6.x
       vitest: '>=4.0.0'
 
-  vitest@4.1.7:
-    resolution: {integrity: sha512-flYyaFd2CgoCoU+0UKt3pxksgC+S02iTDN0n3LtqaMeXsI9SBcdNujc2k0DeFLzUn/0k538yNjOSdwgCqcrwJA==}
+  vitest@4.1.9:
+    resolution: {integrity: sha512-nE3/LEyc0z87uHYLZebqCUOaJr2hdtuPp7BQ4BosVFnfltxgAvMG08NyrSGlPpOUWvR27c5flSmYFTNr78L9GQ==}
     engines: {node: ^20.0.0 || ^22.0.0 || >=24.0.0}
     hasBin: true
     peerDependencies:
       '@edge-runtime/vm': '*'
       '@opentelemetry/api': ^1.9.0
       '@types/node': ^20.0.0 || ^22.0.0 || >=24.0.0
-      '@vitest/browser-playwright': 4.1.7
-      '@vitest/browser-preview': 4.1.7
-      '@vitest/browser-webdriverio': 4.1.7
-      '@vitest/coverage-istanbul': 4.1.7
-      '@vitest/coverage-v8': 4.1.7
-      '@vitest/ui': 4.1.7
+      '@vitest/browser-playwright': 4.1.9
+      '@vitest/browser-preview': 4.1.9
+      '@vitest/browser-webdriverio': 4.1.9
+      '@vitest/coverage-istanbul': 4.1.9
+      '@vitest/coverage-v8': 4.1.9
+      '@vitest/ui': 4.1.9
       happy-dom: '*'
       jsdom: '*'
       vite: ^6.0.0 || ^7.0.0 || ^8.0.0
@@ -4663,10 +4663,10 @@ snapshots:
       vite: 8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2)
       vue: 3.5.24(typescript@6.0.3)
 
-  '@vitest/coverage-v8@4.1.7(vitest@4.1.7)':
+  '@vitest/coverage-v8@4.1.9(vitest@4.1.9)':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
-      '@vitest/utils': 4.1.7
+      '@vitest/utils': 4.1.9
       ast-v8-to-istanbul: 1.0.0
       istanbul-lib-coverage: 3.2.2
       istanbul-lib-report: 3.0.1
@@ -4675,46 +4675,46 @@ snapshots:
       obug: 2.1.1
       std-env: 4.1.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))
+      vitest: 4.1.9(@types/node@24.12.4)(@vitest/coverage-v8@4.1.9)(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))
 
-  '@vitest/expect@4.1.7':
+  '@vitest/expect@4.1.9':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@types/chai': 5.2.3
-      '@vitest/spy': 4.1.7
-      '@vitest/utils': 4.1.7
+      '@vitest/spy': 4.1.9
+      '@vitest/utils': 4.1.9
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.7(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))':
+  '@vitest/mocker@4.1.9(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))':
     dependencies:
-      '@vitest/spy': 4.1.7
+      '@vitest/spy': 4.1.9
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
       vite: 8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2)
 
-  '@vitest/pretty-format@4.1.7':
+  '@vitest/pretty-format@4.1.9':
     dependencies:
       tinyrainbow: 3.1.0
 
-  '@vitest/runner@4.1.7':
+  '@vitest/runner@4.1.9':
     dependencies:
-      '@vitest/utils': 4.1.7
+      '@vitest/utils': 4.1.9
       pathe: 2.0.3
 
-  '@vitest/snapshot@4.1.7':
+  '@vitest/snapshot@4.1.9':
     dependencies:
-      '@vitest/pretty-format': 4.1.7
-      '@vitest/utils': 4.1.7
+      '@vitest/pretty-format': 4.1.9
+      '@vitest/utils': 4.1.9
       magic-string: 0.30.21
       pathe: 2.0.3
 
-  '@vitest/spy@4.1.7': {}
+  '@vitest/spy@4.1.9': {}
 
-  '@vitest/utils@4.1.7':
+  '@vitest/utils@4.1.9':
     dependencies:
-      '@vitest/pretty-format': 4.1.7
+      '@vitest/pretty-format': 4.1.9
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.0
 
@@ -5444,7 +5444,7 @@ snapshots:
 
   node-releases@2.0.38: {}
 
-  node@runtime:24.16.0: {}
+  node@runtime:24.18.0: {}
 
   npm-run-path@6.0.0:
     dependencies:
@@ -6062,21 +6062,21 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.46.2
 
-  vitest-mock-extended@4.0.0(typescript@6.0.3)(vitest@4.1.7):
+  vitest-mock-extended@4.0.0(typescript@6.0.3)(vitest@4.1.9):
     dependencies:
       ts-essentials: 10.1.1(typescript@6.0.3)
       typescript: 6.0.3
-      vitest: 4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))
+      vitest: 4.1.9(@types/node@24.12.4)(@vitest/coverage-v8@4.1.9)(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))
 
-  vitest@4.1.7(@types/node@24.12.4)(@vitest/coverage-v8@4.1.7)(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2)):
+  vitest@4.1.9(@types/node@24.12.4)(@vitest/coverage-v8@4.1.9)(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2)):
     dependencies:
-      '@vitest/expect': 4.1.7
-      '@vitest/mocker': 4.1.7(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))
-      '@vitest/pretty-format': 4.1.7
-      '@vitest/runner': 4.1.7
-      '@vitest/snapshot': 4.1.7
-      '@vitest/spy': 4.1.7
-      '@vitest/utils': 4.1.7
+      '@vitest/expect': 4.1.9
+      '@vitest/mocker': 4.1.9(vite@8.0.8(@types/node@24.12.4)(esbuild@0.28.0)(terser@5.46.2))
+      '@vitest/pretty-format': 4.1.9
+      '@vitest/runner': 4.1.9
+      '@vitest/snapshot': 4.1.9
+      '@vitest/spy': 4.1.9
+      '@vitest/utils': 4.1.9
       es-module-lexer: 2.0.0
       expect-type: 1.3.0
       magic-string: 0.30.21
@@ -6092,7 +6092,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 24.12.4
-      '@vitest/coverage-v8': 4.1.7(vitest@4.1.7)
+      '@vitest/coverage-v8': 4.1.9(vitest@4.1.9)
     transitivePeerDependencies:
       - msw
 
