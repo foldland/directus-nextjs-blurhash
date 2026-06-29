@@ -45,7 +45,7 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.1",
     "@directus/sdk": "21.3.0",
-    "@directus/types": "15.0.3",
+    "@directus/types": "16.0.0",
     "@foldland/biome-configs": "1.1.6",
     "@types/node": "24.13.2",
     "@vitest/coverage-v8": "4.1.9",
