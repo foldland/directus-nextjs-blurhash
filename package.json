@@ -40,7 +40,7 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@directus/extensions-sdk": "^17.0.4"
+    "@directus/extensions-sdk": "^17.0.4 || ^18.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.1",
