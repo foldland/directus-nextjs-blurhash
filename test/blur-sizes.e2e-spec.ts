@@ -25,25 +25,24 @@ describe('blur sizes (e2e)', () => {
     await applySettings({ blurhasher_blur_size: 8 })
   })
 
-  test.for([
-    4, 8, 16, 32,
-  ] as const)('uploading generates a blurhash with size %i', async (size, {
-    expect,
-  }) => {
-    await applySettings({ blurhasher_blur_size: size })
+  test.for([4, 8, 16, 32] as const)(
+    'uploading generates a blurhash with size %i',
+    async (size, { expect }) => {
+      await applySettings({ blurhasher_blur_size: size })
 
-    const { id } = await uploadImage('test/sunset.jpg')
+      const { id } = await uploadImage('test/sunset.jpg')
 
-    // Wait for the background action to complete
-    await new Promise((resolve) => {
-      return setTimeout(resolve, 500)
-    })
+      // Wait for the background action to complete
+      await new Promise((resolve) => {
+        return setTimeout(resolve, 500)
+      })
 
-    const blurhash = await getBlurhash(id)
-    expect(blurhash).toStrictEqual(expected[size])
+      const blurhash = await getBlurhash(id)
+      expect(blurhash).toStrictEqual(expected[size])
 
-    const blur = await decodeDataUri(blurhash)
-    expect(blur?.format).toStrictEqual('webp') // default value
-    expect(blur?.height).toStrictEqual(size)
-  })
+      const blur = await decodeDataUri(blurhash)
+      expect(blur?.format).toStrictEqual('webp') // default value
+      expect(blur?.height).toStrictEqual(size)
+    }
+  )
 })

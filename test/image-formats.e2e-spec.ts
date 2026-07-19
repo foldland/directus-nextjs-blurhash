@@ -27,28 +27,23 @@ describe('image formats (e2e)', () => {
     await cleanupFiles()
   })
 
-  test.concurrent.for([
-    undefined,
-    'jpeg',
-    'png',
-    'tiff',
-    'webp',
-  ] as const)('uploading %s generates a blurhash', async (format, {
-    expect,
-  }) => {
-    const { id } = await uploadImage('test/sunset.jpg', format)
+  test.concurrent.for([undefined, 'jpeg', 'png', 'tiff', 'webp'] as const)(
+    'uploading %s generates a blurhash',
+    async (format, { expect }) => {
+      const { id } = await uploadImage('test/sunset.jpg', format)
 
-    // Wait for the background action to complete
-    await new Promise((resolve) => {
-      return setTimeout(resolve, 500)
-    })
+      // Wait for the background action to complete
+      await new Promise((resolve) => {
+        return setTimeout(resolve, 500)
+      })
 
-    const blurhash = await getBlurhash(id)
-    expect(blurhash).toStrictEqual(expected[format ?? 'undefined'])
+      const blurhash = await getBlurhash(id)
+      expect(blurhash).toStrictEqual(expected[format ?? 'undefined'])
 
-    const blur = await decodeDataUri(blurhash)
-    // default values
-    expect(blur?.format).toStrictEqual('webp')
-    expect(blur?.height).toStrictEqual(8)
-  })
+      const blur = await decodeDataUri(blurhash)
+      // default values
+      expect(blur?.format).toStrictEqual('webp')
+      expect(blur?.height).toStrictEqual(8)
+    }
+  )
 })
