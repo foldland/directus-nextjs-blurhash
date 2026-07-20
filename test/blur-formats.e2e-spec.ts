@@ -33,28 +33,24 @@ describe('blur formats (e2e)', () => {
     await applySettings({ blurhasher_format: 'webp' })
   })
 
-  test.for([
-    'jpeg',
-    'png',
-    'webp',
-    'avif',
-  ] as const)('uploading generates a blurhash in format %s', async (format, {
-    expect,
-  }) => {
-    await applySettings({ blurhasher_format: format })
+  test.for(['jpeg', 'png', 'webp', 'avif'] as const)(
+    'uploading generates a blurhash in format %s',
+    async (format, { expect }) => {
+      await applySettings({ blurhasher_format: format })
 
-    const { id } = await uploadImage('test/sunset.jpg')
+      const { id } = await uploadImage('test/sunset.jpg')
 
-    // Wait for the background action to complete
-    await new Promise((resolve) => {
-      return setTimeout(resolve, 500)
-    })
+      // Wait for the background action to complete
+      await new Promise((resolve) => {
+        return setTimeout(resolve, 500)
+      })
 
-    const blurhash = await getBlurhash(id)
-    expect(blurhash).toStrictEqual(expected[format])
+      const blurhash = await getBlurhash(id)
+      expect(blurhash).toStrictEqual(expected[format])
 
-    const blur = await decodeDataUri(blurhash)
-    expect(blur?.format).toStrictEqual(expectedFormat[format])
-    expect(blur?.height).toStrictEqual(8) // default value
-  })
+      const blur = await decodeDataUri(blurhash)
+      expect(blur?.format).toStrictEqual(expectedFormat[format])
+      expect(blur?.height).toStrictEqual(8) // default value
+    }
+  )
 })
