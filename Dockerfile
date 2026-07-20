@@ -14,7 +14,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
 
 ####################################################################################################
 ## Create Production Image
-FROM docker.io/directus/directus:12.0@sha256:9c8470ea465cb78ff902221847f73c8516dadeff40b02fcb195065745e9d7874 AS directus
+FROM docker.io/directus/directus:12.1@sha256:27fd291463f4e746a7911139377a1dbc7a5c09ae82ee15b028b97bcc4950c69d AS directus
 
 COPY --chown=node:node \
     --from=build /extensions/dist /directus/extensions/@foldland-directus-nextjs-blurhash/dist
