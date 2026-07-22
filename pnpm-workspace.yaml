@@ -2,6 +2,10 @@
 minimumReleaseAge: 4320 # 3 days - same as renovate
 minimumReleaseAgeExclude:
     - "@foldland/*"
+    # security issues
+    - js-yaml@4.3.0
+    - axios@1.18.0
+    - sharp@0.35.0
 
 registries:
     default: https://registry.npmjs.org/
@@ -33,11 +37,10 @@ packages:
 overrides:
     # broken directus peers
     "@vitejs/plugin-vue@6.0.1": ^6.0.3
-    esbuild@0.26.0: ^0.28.0
     # security issues
-    axios@>=1.0.0 <1.15.2: ^1.15.2
-    fast-xml-builder@ >1.0.0 <=1.1.6: ^1.1.7
-    lodash-es@>=4.0.0 <=4.17.23: ^4.17.24
+    axios@>=1.15.2 <1.18.0: ^1.18.0
+    js-yaml@>=4.0.0 <4.3.0: ^4.3.0
+    sharp@<0.35.0: ^0.35.0
 
 allowBuilds:
     esbuild: false

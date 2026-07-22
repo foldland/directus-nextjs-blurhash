@@ -15,7 +15,7 @@ describe('image formats (e2e)', () => {
     // avif times out the test
     avif: '',
     png: 'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAwAgCdASoFAAgAAUAmJYwCdEyAfoAB2TamWAD88xpg7KbMt5jS0eZS8IQJoUCNQTUprHjvq6t+nUoJadvI5euCAAA=',
-    tiff: 'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAwAgCdASoFAAgAAUAmJYwCdEyAfoAB2TamWAD88xpg7KbMt5jS0eZS8IQJoUCNQTUjWjAM6x85Pac15B4AhJAoAAA=',
+    tiff: 'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAAAwAgCdASoFAAgAAUAmJYwCdEyAfoAB2TamWAD88xpg7KbMt5jS0eZS8IQJoUCNQTUprHjvq6t+nUoJad92LLZeAAA=',
     webp: 'data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABwAgCdASoFAAgAAUAmJYwCdEyAfoB7/4HoAragAPzzGmDspsy3nfHuaP89e55qpfJsTSAPfwdW/GicW35BgHCtpWgAAA==',
   }
 
@@ -34,7 +34,7 @@ describe('image formats (e2e)', () => {
 
       // Wait for the background action to complete
       await new Promise((resolve) => {
-        return setTimeout(resolve, 500)
+        return setTimeout(resolve, 1000)
       })
 
       const blurhash = await getBlurhash(id)

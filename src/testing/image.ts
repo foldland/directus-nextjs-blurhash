@@ -24,14 +24,7 @@ export async function decodeDataUri(dataURI: string) {
   return await image.metadata()
 }
 
-export type ImageFormat =
-  | 'avif'
-  | 'gif'
-  | 'jpeg'
-  | 'jpg'
-  | 'png'
-  | 'tiff'
-  | 'webp'
+export type ImageFormat = 'avif' | 'gif' | 'jpeg' | 'png' | 'tiff' | 'webp'
 
 export async function getImageFile(
   path: string,

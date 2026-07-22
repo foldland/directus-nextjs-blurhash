@@ -83,6 +83,7 @@ ssl
 .idea
 nbproject
 .tsbuildinfo
+*.tsbuildinfo
 .eslintcache
 .env
 
