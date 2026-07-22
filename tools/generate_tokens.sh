@@ -8,7 +8,7 @@ if [ -f .env ] && [ -z "${CI-}" ]; then
 fi
 
 # set tokens
-ADMIN_TOKEN=$(curl -sS -X POST --retry 10 --retry-all-errors --retry-delay 2\
+ADMIN_TOKEN=$(curl -sS -X POST --retry 10 --retry-all-errors --retry-delay 5\
     "$DIRECTUS_URL/auth/login" -H "Content-Type: application/json" \
     -d "{\"email\":\"$ADMIN_EMAIL\",\"password\":\"$ADMIN_PASSWORD\"}" | grep \
     -o '"access_token":"[^"]*' | sed 's/"access_token":"//')

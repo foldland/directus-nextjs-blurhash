@@ -43,6 +43,8 @@ export interface DirectusCollection {
 	collapse?: string;
 	preview_url?: string | null;
 	versioning?: boolean;
+	status?: 'active' | 'inactive';
+	autosave_revision_interval?: null | 30 | 60 | 300 | 600 | null;
 }
 
 export interface DirectusComment {
@@ -221,6 +223,7 @@ export interface DirectusSession {
 	share?: DirectusShare | string | null;
 	origin?: string | null;
 	next_token?: string | null;
+	oauth_client?: DirectusOauthClient | string | null;
 }
 
 export interface DirectusSettings {
@@ -279,10 +282,20 @@ export interface DirectusSettings {
 	ai_openai_compatible_name?: string | null;
 	ai_openai_compatible_models?: Array<{ id: string; name: string; context: number; output: number; attachment: boolean; reasoning: boolean; providerOptions: Record<string, any> }> | null;
 	ai_openai_compatible_headers?: Array<{ header: string; value: string }> | null;
-	ai_openai_allowed_models?: Array<`gpt-4o-mini` | `gpt-4.1-nano` | `gpt-4.1-mini` | `gpt-4.1` | `gpt-5-nano` | `gpt-5-mini` | `gpt-5` | `gpt-5.2` | `gpt-5.2-chat-latest` | `gpt-5.2-pro` | `gpt-5.4` | `gpt-5.4-pro`> | null;
-	ai_anthropic_allowed_models?: Array<`claude-haiku-4-5` | `claude-sonnet-4-5` | `claude-opus-4-5` | `claude-sonnet-4-6` | `claude-opus-4-6`> | null;
+	ai_openai_allowed_models?: Array<`gpt-4o-mini` | `gpt-4.1-nano` | `gpt-4.1-mini` | `gpt-4.1` | `gpt-5-nano` | `gpt-5-mini` | `gpt-5` | `gpt-5.1` | `gpt-5.1-chat-latest` | `gpt-5.2` | `gpt-5.2-chat-latest` | `gpt-5.2-pro` | `gpt-5.4-nano` | `gpt-5.4-mini` | `gpt-5.4` | `gpt-5.4-pro` | `gpt-5.5` | `gpt-5.5-pro`> | null;
+	ai_anthropic_allowed_models?: Array<`claude-haiku-4-5` | `claude-sonnet-4-6` | `claude-opus-4-7` | `claude-opus-4-6`> | null;
 	ai_google_allowed_models?: Array<`gemini-3-pro-preview` | `gemini-3-flash-preview` | `gemini-2.5-pro` | `gemini-2.5-flash` | `gemini-3.1-pro-preview` | `gemini-3.1-flash-lite-preview` | `gemini-2.5-flash-lite`> | null;
 	collaborative_editing_enabled?: boolean;
+	ai_translation_default_model?: string | null;
+	ai_translation_glossary?: Array<{ term: string; translation_note: string }> | null;
+	ai_translation_style_guide?: string | null;
+	license_key?: string | null;
+	license_token?: string | null;
+	mcp_oauth_enabled?: boolean;
+	/** @description Allow MCP clients to register automatically using the OAuth 2.0 Dynamic Client Registration protocol (RFC 7591). */
+	mcp_oauth_dcr_enabled?: boolean;
+	/** @description Allow MCP clients to identify themselves using an HTTPS URL that hosts their metadata (IETF draft-oauth-client-id-metadata-document). */
+	mcp_oauth_cimd_enabled?: boolean;
 	/** @description Height of the output image. Output images are always scaled, keeping their aspect ratio. @required */
 	blurhasher_blur_size: number;
 	/** @description Format of the output image (blur) @required */
@@ -309,7 +322,7 @@ export interface DirectusUser {
 	avatar?: DirectusFile | string | null;
 	language?: string | null;
 	tfa_secret?: string | null;
-	status?: 'draft' | 'invited' | 'unverified' | 'active' | 'suspended' | 'archived';
+	status?: 'draft' | 'invited' | 'unverified' | 'active' | 'suspended' | 'archived' | `inactive-license`;
 	role?: DirectusRole | string | null;
 	token?: string | null;
 	last_access?: string | null;
@@ -437,7 +450,7 @@ export interface DirectusVersion {
 	key?: string;
 	name?: string | null;
 	collection?: DirectusCollection | string;
-	item?: string;
+	item?: string | null;
 	hash?: string | null;
 	date_created?: string | null;
 	date_updated?: string | null;
@@ -497,6 +510,66 @@ export interface DirectusDeploymentRun {
 	completed_at?: string | null;
 }
 
+export interface DirectusOauthClient {
+	/** @primaryKey */
+	client_id: string;
+	client_name?: string;
+	redirect_uris?: 'json';
+	grant_types?: 'json';
+	token_endpoint_auth_method?: string;
+	client_secret_hash?: string | null;
+	registration_type?: string;
+	client_uri?: string | null;
+	logo_uri?: string | null;
+	tos_uri?: string | null;
+	policy_uri?: string | null;
+	metadata_fetched_at?: string | null;
+	metadata_expires_at?: string | null;
+	metadata_etag?: string | null;
+	date_created?: string;
+	tokens?: DirectusOauthToken[] | string[];
+}
+
+export interface DirectusOauthCode {
+	/** @primaryKey */
+	id: string;
+	code_hash?: string;
+	client?: DirectusOauthClient | string;
+	user?: DirectusUser | string;
+	redirect_uri?: string;
+	resource?: string;
+	code_challenge?: string;
+	code_challenge_method?: string;
+	scope?: string | null;
+	expires_at?: string;
+	used_at?: string | null;
+}
+
+export interface DirectusOauthConsent {
+	/** @primaryKey */
+	id: string;
+	user?: DirectusUser | string;
+	client?: DirectusOauthClient | string;
+	redirect_uri?: string;
+	scope?: string | null;
+	date_created?: string;
+	date_updated?: string;
+}
+
+export interface DirectusOauthToken {
+	/** @primaryKey */
+	id: string;
+	client?: DirectusOauthClient | string;
+	user?: DirectusUser | string;
+	session?: string;
+	previous_session?: string | null;
+	resource?: string;
+	code_hash?: string;
+	scope?: string | null;
+	expires_at?: string;
+	date_created?: string;
+}
+
 export interface Schema {
 	directus_access: DirectusAccess[];
 	directus_activity: DirectusActivity[];
@@ -527,6 +600,10 @@ export interface Schema {
 	directus_deployments: DirectusDeployment[];
 	directus_deployment_projects: DirectusDeploymentProject[];
 	directus_deployment_runs: DirectusDeploymentRun[];
+	directus_oauth_clients: DirectusOauthClient[];
+	directus_oauth_codes: DirectusOauthCode[];
+	directus_oauth_consents: DirectusOauthConsent[];
+	directus_oauth_tokens: DirectusOauthToken[];
 }
 
 export enum CollectionNames {
@@ -558,5 +635,9 @@ export enum CollectionNames {
 	directus_extensions = 'directus_extensions',
 	directus_deployments = 'directus_deployments',
 	directus_deployment_projects = 'directus_deployment_projects',
-	directus_deployment_runs = 'directus_deployment_runs'
+	directus_deployment_runs = 'directus_deployment_runs',
+	directus_oauth_clients = 'directus_oauth_clients',
+	directus_oauth_codes = 'directus_oauth_codes',
+	directus_oauth_consents = 'directus_oauth_consents',
+	directus_oauth_tokens = 'directus_oauth_tokens'
 }
