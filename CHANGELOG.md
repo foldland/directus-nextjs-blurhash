@@ -3,6 +3,59 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.1.3](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.2..v1.1.3) - 2026-07-22
+
+### 👷 Continuous Integration
+
+- fix type generation - ([d661860](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/d661860aebfc35be4e7f0aaee84172b861e3b286)) - @nikolas.rimikis
+
+### 🔧 Chores
+
+- **(deps)** update vitest monorepo to v4.1.7 - ([eb48cf4](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/eb48cf4d2bcbf8583da8b774d3577f20dc9eaefe)) - @renovate
+- **(deps)** update node.js to e36c918 - ([0a41f29](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/0a41f299d5f373eed9786dd24837b920d24c6908)) - @renovate
+- **(deps)** update dependency pnpm to v11.2.2 - ([10a13a3](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/10a13a3099d06617e2307634e8145f8900c4687f)) - @renovate
+- **(deps)** update node.js to 4e6b70d - ([a4567a8](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/a4567a8ef42483e524f6660cb8b20f90c2ba2e04)) - @renovate
+- **(deps)** update docker.io/redis:8 docker digest to 4d25e2f - ([56f5477](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/56f547779de941a696ffef6e801236487538b3fa)) - @renovate
+- **(deps)** lock file maintenance - ([7abff18](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/7abff18d7529d1896bbcff55c1889eedfb7f586e)) - @renovate
+- **(deps)** update dependency @biomejs/biome to v2.4.16 - ([e040d83](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/e040d83f2845844ed8609fc0f1b5d8899dfad83f)) - @renovate
+- **(deps)** update dependency pnpm to v11.4.0 - ([fc0eb6c](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/fc0eb6ca2b7103edd1b5966120a9571deee3fec5)) - @renovate
+- **(deps)** update dependency pnpm to v11.9.0 - ([63d02a4](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/63d02a43e33b1b18e2bd69276ec90be40752dbfb)) - @Renovate Bot
+- **(deps)** update docker.io/directus/directus docker tag to v12 - ([26a83bd](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/26a83bd41f90336fb4333c3106ece760af404bca)) - @renovate
+- **(deps)** update node.js to 0cbad76 - ([d2b63ac](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/d2b63ace5919cd304fa4079f38a0dbbea4c49d3e)) - @renovate
+- **(deps)** update docker.io/postgis/postgis:18-master docker digest to c232330 - ([fb418cf](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/fb418cfd48682394e86ac356b3e54e4209dff8eb)) - @renovate
+- **(deps)** update docker.io/redis:8 docker digest to 2838d55 - ([8f7538d](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/8f7538d19fbaed5955cc21c42fba5e302cc913ad)) - @renovate
+- **(deps)** update node.js to v24.18.0 - ([d586a75](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/d586a7586015c5f8ac1e175ffe14e6ffbe850eb9)) - @renovate
+- **(deps)** update vitest monorepo to v4.1.9 - ([eedbe91](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/eedbe919ee420db5dce704ec660cecb67ca5ae77)) - @renovate
+- **(deps)** update dependency @types/node to v24.13.2 - ([b0df001](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/b0df001aa036fa7e3c1cc9df03e9495b8465a9ff)) - @renovate
+- **(deps)** update biome packages - ([690c86c](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/690c86c4895423f2017e9e7c3c6eb4648fff94d1)) - @renovate
+- **(deps)** update dependency @directus/types to v16 - ([b35d994](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/b35d994867b2413b6437cd42bc8334cebff88012)) - @renovate
+- **(deps)** update dependency @directus/extensions-sdk to v18 - ([96b5191](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/96b519147f3a5ecb8f9e8b89feb6162eeb0caa98)) - @renovate
+- **(deps)** update dependency @directus/sdk to v22 - ([1c09a87](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/1c09a87ada235d5189be3350e6e0a88836cf038d)) - @renovate
+- **(deps)** lock file maintenance - ([7256135](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/72561358e1f9b962e8afeb615a638d6ec864d7da)) - @renovate
+- **(deps)** update biome packages - ([130fe84](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/130fe8488c7552f7786a2e46dee3452137c2f107)) - @renovate
+- **(deps)** update dependency @directus/sdk to v23 - ([613c1ae](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/613c1ae8930107574f5401a75d856d83b52ceb2d)) - @renovate
+- **(deps)** update dependency pnpm to v11.13.1 - ([2697cb2](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/2697cb23ed313a89bbb82a281366a775874896f0)) - @renovate
+- **(deps)** update node.js to 6f7b03f - ([c9716ba](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/c9716bafa7b7feee191c598960755b0b6c180dcd)) - @renovate
+- **(deps)** update biome packages - ([2ddf71e](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/2ddf71e51ce44c823aa28f5ccea2cd82662313e2)) - @renovate
+- **(deps)** update vitest monorepo to v4.1.10 - ([6b35d0a](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/6b35d0a0c862980a88d2b97115d27e9873a9551b)) - @renovate
+- **(deps)** update docker.io/directus/directus docker tag to v12.1 - ([171e433](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/171e433f603f1810b1cf51723708cf9972316d65)) - @renovate
+- **(deps)** update dependency vitest-mock-extended to v5 - ([896a7b3](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/896a7b3e02e85ebf689a804fc905c0d5a76d1f34)) - @renovate
+- **(deps)** update docker.io/redis:8 docker digest to 234c902 - ([d3f3398](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/d3f3398356af021989c37dec49c3cdd89e4e4433)) - @renovate
+- **(deps)** update node.js to 627da5f - ([b15235f](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/b15235f8ee7c65290116e3e712f636e67315a88b)) - @renovate
+- **(deps)** update docker.io/postgis/postgis:18-master docker digest to b714e6e - ([89bb709](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/89bb709d8897b8b1d678d6090d34dd3abc5d1769)) - @renovate
+- **(deps)** update dependency @types/node to v24.13.3 - ([ffb6090](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/ffb6090d21a2d4c256c81203924ed93675965170)) - @renovate
+- **(deps)** update dependency typescript to v7 - ([082f3ea](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/082f3ea5c200f47a2e5398a379564e5d659a4316)) - @renovate
+
+
+
+
+#### Statistics
+- 35 commit(s) contributed to the release.
+- 64 day(s) passed between the first and last commit.
+- 35 commit(s) parsed as conventional.
+- 0 linked issue(s) detected in commits.
+- 65 day(s) passed between releases.
+---
 ## [1.1.2](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.1..v1.1.2) - 2026-05-18
 
 ### 👷 Continuous Integration
