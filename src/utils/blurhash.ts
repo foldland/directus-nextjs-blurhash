@@ -39,11 +39,15 @@ export async function generateBlurHash(
     })
 
     const chunks: Array<Buffer> = []
+    let totalSize = 0
+
     for await (const chunk of stream) {
-      chunks.push(chunk)
+      const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)
+      chunks.push(buffer)
+      totalSize += buffer.length
     }
 
-    const buffer = Buffer.concat(chunks)
+    const buffer = Buffer.concat(chunks, totalSize)
     const blurImageBase64 = buffer.toString('base64')
     const blurHash = `data:image/${settings.format};base64,${blurImageBase64}`
     logger.trace(`blurhash: generated ${blurHash} for image ${key}`)
