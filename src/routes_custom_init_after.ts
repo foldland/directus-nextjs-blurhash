@@ -87,7 +87,7 @@ export async function routesCustomInitAfter(
         : 'blurhash: missing blurs generated'
     )
   } catch (error) {
-    logger.error(`blurhash: Error re generating blurs: ${error}`)
+    logger.error(`blurhash: Error in bootstrap: ${error}`)
   } finally {
     settingsService.upsertSingleton({ blurhasher_regenerate_on_start: false })
     logger.debug('blurhash: bootstrap completed')
