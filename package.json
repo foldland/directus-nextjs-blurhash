@@ -40,34 +40,34 @@
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
-    "@directus/extensions-sdk": "^17.0.4 || ^18.0.0",
+    "@directus/extensions-sdk": "^17.0.0 || ^18.0.0",
     "pino": "^9.0.0",
     "sharp": "^0.34.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.5",
+    "@biomejs/biome": "2.5.8",
     "@directus/sdk": "23.0.0",
-    "@directus/types": "16.0.0",
-    "@foldland/biome-configs": "1.4.1",
+    "@directus/types": "16.1.0",
+    "@foldland/biome-configs": "1.5.0",
     "@types/node": "24.13.3",
     "@vitest/coverage-v8": "4.1.10",
     "directus-sdk-typegen": "0.2.1",
     "dotenv": "17.4.2",
     "pino": "9.7.0",
-    "sharp": "0.34.5",
+    "sharp": "0.35.3",
     "typescript": "7.0.2",
     "vitest": "4.1.10",
-    "vitest-mock-extended": "5.1.0"
+    "vitest-mock-extended": "5.1.1"
   },
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.18.0",
+      "version": "24.19.0",
       "onFail": "download"
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "11.17.0",
+      "version": "11.20.0",
       "onFail": "download"
     }
   }

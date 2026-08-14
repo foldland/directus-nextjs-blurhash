@@ -1,10 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "https://renovate-presets.foldland.io/v3.17.1/languages/default.json",
-    "https://renovate-presets.foldland.io/v3.17.1/languages/nodejs.json",
-    "https://renovate-presets.foldland.io/v3.17.1/presets/library.json",
-    "https://renovate-presets.foldland.io/v3.17.1/presets/nodejs-pnpm.json",
-    "schedule:earlyMondays"
-  ]
+    "https://renovate-presets.foldland.io/v3.17.3/languages/default.json",
+    "https://renovate-presets.foldland.io/v3.17.3/languages/nodejs.json",
+    "https://renovate-presets.foldland.io/v3.17.3/presets/library.json",
+    "https://renovate-presets.foldland.io/v3.17.3/presets/nodejs-pnpm.json"
+  ],
+  "ignoreDeps": ["pino", "sharp"]
 }
