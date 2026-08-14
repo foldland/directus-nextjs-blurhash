@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.1.4](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.3..v1.1.4) - 2026-08-14
+
+### 🚀 Performance
+
+- pre allocate buffer length - ([3773376](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/377337662b65085107c7b6b0660bc89667d12090)) - @nikolas.rimikis
+
+### 📚 Documentation
+
+- add contributing guidelines - ([461410b](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/461410b31449000d7409a9d2a11ab460afa59235)) - @nikolas.rimikis
+
+### 🔧 Chores
+
+- **(deps)** update dependency @biomejs/biome to v2.5.5 - ([8e3c1c2](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/8e3c1c297c74ac5db468a20f42eef301ba17a5b0)) - @renovate
+- **(deps)** update dependency pnpm to v11.17.0 - ([8c0dedb](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/8c0dedb3be03e9c42e9f84ea4cfccf64f25e5c98)) - @renovate
+- **(deps)** update dependency vitest-mock-extended to v5.1.0 - ([ca2a53b](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/ca2a53b7dcd50bdf7c7a562aa6808dae20e5435b)) - @renovate
+- **(deps)** update docker.io/redis:8 docker digest to c88d347 - ([0f052b9](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/0f052b94ddfd4e6cdd8bc183264a9880a16e954a)) - @renovate
+- **(deps)** lock file maintenance - ([7488886](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/7488886c370ff29c3774a1bedfe5d3a836b53eac)) - @renovate
+- **(deps)** update all non-major dependencies - ([feef738](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/feef7383143175c299daa494b5aec06bbe6d5667)) - @Renovate Bot
+- refine logging - ([aa6fe33](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/aa6fe33a052462829b9fd6389d407345b71770ab)) - @nikolas.rimikis
+
+
+
+
+#### Statistics
+- 9 commit(s) contributed to the release.
+- 18 day(s) passed between the first and last commit.
+- 9 commit(s) parsed as conventional.
+- 0 linked issue(s) detected in commits.
+- 23 day(s) passed between releases.
+---
 ## [1.1.3](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.2..v1.1.3) - 2026-07-22
 
 ### 👷 Continuous Integration
@@ -45,14 +75,15 @@ All notable changes to this project will be documented in this file. See [conven
 - **(deps)** update docker.io/postgis/postgis:18-master docker digest to b714e6e - ([89bb709](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/89bb709d8897b8b1d678d6090d34dd3abc5d1769)) - @renovate
 - **(deps)** update dependency @types/node to v24.13.3 - ([ffb6090](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/ffb6090d21a2d4c256c81203924ed93675965170)) - @renovate
 - **(deps)** update dependency typescript to v7 - ([082f3ea](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/082f3ea5c200f47a2e5398a379564e5d659a4316)) - @renovate
+- **(deps)** lock file maintenance - ([6469736](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/646973644ff95b5379d935aecad3b8f2e2389bea)) - @renovate
 
 
 
 
 #### Statistics
-- 35 commit(s) contributed to the release.
-- 64 day(s) passed between the first and last commit.
-- 35 commit(s) parsed as conventional.
+- 36 commit(s) contributed to the release.
+- 65 day(s) passed between the first and last commit.
+- 36 commit(s) parsed as conventional.
 - 0 linked issue(s) detected in commits.
 - 65 day(s) passed between releases.
 ---
