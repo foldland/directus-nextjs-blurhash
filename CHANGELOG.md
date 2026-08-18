@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.1.5](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.4..v1.1.5) - 2026-08-18
+
+### 🚀 Performance
+
+- order image transformations - ([b4e426e](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/b4e426ed23cc1c501453786ca099c3d5b355c276)) - @nikolas.rimikis
+
+### 🔧 Chores
+
+- **(deps)** lock file maintenance - ([971c3df](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/971c3df33751613015a6e3c48470f8f770c8eb24)) - @renovate
+- **(deps)** update all non-major dependencies - ([4c51e43](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/4c51e43d5571d4fda13ebbd52287368f3f12aad9)) - @Renovate Bot
+
+
+
+
+#### Statistics
+- 3 commit(s) contributed to the release.
+- 1 day(s) passed between the first and last commit.
+- 3 commit(s) parsed as conventional.
+- 0 linked issue(s) detected in commits.
+- 4 day(s) passed between releases.
+---
 ## [1.1.4](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.3..v1.1.4) - 2026-08-14
 
 ### 🚀 Performance
