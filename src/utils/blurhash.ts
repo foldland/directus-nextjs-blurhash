@@ -33,8 +33,10 @@ export async function generateBlurHash(
   try {
     const { stream } = await assetsService.getAsset(key, {
       transformationParams: {
-        height: settings.blurSize,
-        format: settings.format,
+        transforms: [
+          ['resize', { height: settings.blurSize }],
+          ['toFormat', settings.format],
+        ],
       },
     })
 
