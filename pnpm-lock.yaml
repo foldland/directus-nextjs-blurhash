@@ -20,8 +20,8 @@ importers:
         specifier: 2.5.9
         version: 2.5.9
       '@directus/sdk':
-        specifier: 23.0.0
-        version: 23.0.0
+        specifier: 25.0.0
+        version: 25.0.0
       '@directus/types':
         specifier: 16.2.0
         version: 16.2.0(knex@3.1.0)(pino@9.7.0)(sharp@0.35.3(@types/node@24.13.3))(vue@3.5.24(typescript@7.0.2))
@@ -185,8 +185,8 @@ packages:
   '@directus/schema@14.0.2':
     resolution: {integrity: sha512-qHAtkAejvcPQCWaRpU9HqJs7Jm4gtxPujT2eB4L+RnTy8ESGjR0C4WvPbUWiXLjaWJbaWB0avFE0Dptzvz7Uzw==}
 
-  '@directus/sdk@23.0.0':
-    resolution: {integrity: sha512-hoPSj9bhe2dxaq9PXuvqqCHzjy9sUvcik2vi5DA/xKZ7E42O2TgDfNgRjYY8gb0ZOkm3TAUeLuEKf4aJTrUYIw==}
+  '@directus/sdk@25.0.0':
+    resolution: {integrity: sha512-kQJ7LiJsR653v/zq+4CUXBnHqE00W37+qT/pUuRsWl0ZAEY2uYcRaHd89LbCVvaCR7kZTzrxhXVCQGcyD+o5QQ==}
     engines: {node: '>=22'}
 
   '@directus/system-data@4.6.0':
@@ -3132,7 +3132,7 @@ snapshots:
       - supports-color
       - tedious
 
-  '@directus/sdk@23.0.0': {}
+  '@directus/sdk@25.0.0': {}
 
   '@directus/system-data@4.6.0': {}
 
