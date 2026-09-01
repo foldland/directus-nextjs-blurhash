@@ -1,10 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "https://renovate-presets.foldland.io/v3.18.1/languages/default.json",
-    "https://renovate-presets.foldland.io/v3.18.1/languages/nodejs.json",
-    "https://renovate-presets.foldland.io/v3.18.1/presets/library.json",
-    "https://renovate-presets.foldland.io/v3.18.1/presets/nodejs-pnpm.json"
+    "https://renovate-presets.foldland.io/v3.20.0/languages/default.json",
+    "https://renovate-presets.foldland.io/v3.20.0/languages/nodejs.json",
+    "https://renovate-presets.foldland.io/v3.20.0/presets/library.json",
+    "https://renovate-presets.foldland.io/v3.20.0/presets/nodejs-pnpm.json"
   ],
   "ignoreDeps": ["pino", "sharp"]
 }

@@ -45,8 +45,8 @@
     "sharp": "^0.34.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.9",
-    "@directus/sdk": "25.0.0",
+    "@biomejs/biome": "2.5.11",
+    "@directus/sdk": "25.0.1",
     "@directus/types": "16.2.0",
     "@foldland/biome-configs": "1.5.0",
     "@types/node": "24.13.3",
@@ -62,12 +62,12 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.19.0",
+      "version": "24.20.0",
       "onFail": "download"
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "11.22.0",
+      "version": "11.24.0",
       "onFail": "download"
     }
   }
