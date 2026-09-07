@@ -24,19 +24,19 @@ export async function routesCustomInitAfter(
   const { assetsService, itemsService, settingsService } = services
   const settings = await getSetting(settingsService, logger)
 
-  logger.debug(
-    `blurhash: plugin loaded with config ${JSON.stringify(settings)}`
-  )
+  logger.debug(() => {
+    return `blurhash: plugin loaded with config ${JSON.stringify(settings)}`
+  })
 
   if (!settings.generateMissingOnStart && !settings.regenerateOnStart) {
     return
   }
 
-  logger.info(
-    settings.regenerateOnStart
+  logger.info(() => {
+    return settings.regenerateOnStart
       ? 'blurhash: regenerating all blurs'
       : 'blurhash: generate missing blurs'
-  )
+  })
 
   try {
     const images = await itemsService.readByQuery({
@@ -56,13 +56,12 @@ export async function routesCustomInitAfter(
       limit: -1,
     })
 
-    logger.debug(
-      `blurhash: found missing ${JSON.stringify(
-        images.map((i) => {
-          return i.id
-        })
-      )}`
-    )
+    logger.debug(() => {
+      const ids = images.map((i) => {
+        return i.id
+      })
+      return `blurhash: found missing ${JSON.stringify(ids)}`
+    })
 
     const chunkSize = settings.generationChunkSize
     for (let i = 0; i < images.length; i += chunkSize) {
@@ -81,15 +80,19 @@ export async function routesCustomInitAfter(
       await Promise.all(chunk)
     }
 
-    logger.info(
-      settings.regenerateOnStart
+    logger.info(() => {
+      return settings.regenerateOnStart
         ? 'blurhash: all blurs re generated'
         : 'blurhash: missing blurs generated'
-    )
+    })
   } catch (error) {
-    logger.error(`blurhash: Error in bootstrap: ${error}`)
+    logger.error(() => {
+      return `blurhash: Error in bootstrap: ${error}`
+    })
   } finally {
     settingsService.upsertSingleton({ blurhasher_regenerate_on_start: false })
-    logger.debug('blurhash: bootstrap completed')
+    logger.debug(() => {
+      return 'blurhash: bootstrap completed'
+    })
   }
 }

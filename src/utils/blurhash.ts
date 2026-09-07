@@ -43,10 +43,14 @@ export async function generateBlurHash(
     const buf = await buffer(stream)
     const blurImageBase64 = buf.toString('base64')
     const blurHash = `data:image/${settings.format};base64,${blurImageBase64}`
-    logger.trace(`blurhash: generated ${blurHash} for image ${key}`)
+    logger.trace(() => {
+      return `blurhash: generated ${blurHash} for image ${key}`
+    })
 
     return blurHash
   } catch (error) {
-    logger.error(`blurhash: Error generating blurhash: ${error}`)
+    logger.error(() => {
+      return `blurhash: Error generating blurhash: ${error}`
+    })
   }
 }

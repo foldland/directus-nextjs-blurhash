@@ -23,13 +23,17 @@ export async function fileUploadAction(
 
   assert(typeof key === 'string', 'meta.key is a string')
 
-  logger.debug(`blurhash: generating blur for id: ${key}`)
+  logger.debug(() => {
+    return `blurhash: generating blur for id: ${key}`
+  })
 
   if (
     typeof payload?.type !== 'string' ||
     !supportedMimeTypes.includes(payload.type)
   ) {
-    logger.debug(`blurhash: unsupported mime type ${payload.type}`)
+    logger.debug(() => {
+      return `blurhash: unsupported mime type ${payload.type}`
+    })
 
     return
   }
