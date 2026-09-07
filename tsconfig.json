@@ -29,7 +29,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js"],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "node_modules",
     "boilerplates",
