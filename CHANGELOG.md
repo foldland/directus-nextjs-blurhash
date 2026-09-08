@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.1.7](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.6..v1.1.7) - 2026-09-08
+
+### 🔨 Refactoring
+
+- use node:stream/consumer for stream transformation - ([e63f26a](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/e63f26abfc6ef98342e2c3a491da277244d0789e)) - @nikolas.rimikis
+
+### 🚀 Performance
+
+- dynamically build logs - ([d8d933b](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/d8d933b32677db0e6593404715928899bc04fde9)) - @nikolas.rimikis
+
+### 🚨 Tests
+
+- fix typescript resolution - ([ab18206](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/ab18206951d62137ae90b71d7725d211b0a1b570)) - @nikolas.rimikis
+
+### 🔧 Chores
+
+- **(deps)** update all non-major dependencies - ([15ae3f5](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/15ae3f5d3cf1d83fee4a890208cf501fba19fb17)) - @Renovate Bot
+- **(deps)** update all non-major dependencies - ([cf9568a](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/cf9568ab6877b9fe10124d398b7ecb17d465eb8a)) - @Renovate Bot
+- **(deps)** update vitest monorepo to v5 - ([4dc7744](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/4dc774455dcb14fc70caf1885ed038993afc6670)) - @Renovate Bot
+- **(deps)** update dependency pnpm to v12 - ([a7d1003](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/a7d10039bdd50867268c190ee62a77dc486e6331)) - @renovate
+- add dockerignore - ([7e85ea8](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/7e85ea8598502d965e549c377afbe0f9fa7d4b68)) - @nikolas.rimikis
+
+
+
+
+#### Statistics
+- 8 commit(s) contributed to the release.
+- 7 day(s) passed between the first and last commit.
+- 8 commit(s) parsed as conventional.
+- 0 linked issue(s) detected in commits.
+- 15 day(s) passed between releases.
+---
 ## [1.1.6](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.5..v1.1.6) - 2026-08-24
 
 ### 🔧 Chores
