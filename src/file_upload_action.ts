@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict'
 import type { AbstractService } from '@directus/types'
 import type { Logger } from 'pino'
-import type { DirectusFile, DirectusSettings } from '@/utils/directus-schema.ts'
+import type {
+  DirectusFile,
+  DirectusSettings,
+} from '../src/utils/directus-schema.ts'
 import { generateBlurHash, supportedMimeTypes } from './utils/blurhash.ts'
 import { getSetting } from './utils/settings.ts'
 import type { AssetsService } from './utils/types.ts'

@@ -1,6 +1,6 @@
 import type { AbstractService, Field, Type } from '@directus/types'
 import type { Logger } from 'pino'
-import type { DirectusSettings } from '@/utils/directus-schema.ts'
+import type { DirectusSettings } from '../utils/directus-schema.ts'
 import {
   blurhash,
   blurSize,

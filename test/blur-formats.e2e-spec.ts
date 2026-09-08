@@ -5,8 +5,8 @@ import {
   getBlurhash,
   login,
   uploadImage,
-} from '@/testing/directus'
-import { decodeDataUri } from '@/testing/image'
+} from '../src/testing/directus'
+import { decodeDataUri } from '../src/testing/image'
 
 describe('blur formats (e2e)', () => {
   const expected = {
