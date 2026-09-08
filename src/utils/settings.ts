@@ -1,6 +1,6 @@
 import type { AbstractService, Field, Type } from '@directus/types'
 import type { Logger } from 'pino'
-import type { DirectusSettings } from '@/utils/directus-schema.ts'
+import type { DirectusSettings } from '../utils/directus-schema.ts'
 import {
   blurhash,
   blurSize,
@@ -56,7 +56,9 @@ async function upsertField(
 
     await fieldsService.createField(field.collection, field)
   } catch (error) {
-    logger.error(`blurhash: Error updating settings: ${error}`)
+    logger.error(() => {
+      return `blurhash: Error updating settings: ${error}`
+    })
   }
 }
 
@@ -113,7 +115,9 @@ export async function getSetting(
         settingsDefaults.generateMissingOnStart,
     }
   } catch (error) {
-    logger.error(`blurhash: Error reading settings: ${error}`)
+    logger.error(() => {
+      return `blurhash: Error reading settings: ${error}`
+    })
 
     return settingsDefaults
   }

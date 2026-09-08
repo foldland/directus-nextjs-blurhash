@@ -9,7 +9,7 @@ import {
   updateSettings,
   uploadFiles,
 } from '@directus/sdk'
-import type { DirectusSettings, Schema } from '@/utils/directus-schema'
+import type { DirectusSettings, Schema } from '../utils/directus-schema'
 import { env } from './env'
 import { getImageFile, type ImageFormat } from './image'
 

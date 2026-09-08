@@ -1,4 +1,4 @@
-import { Buffer } from 'node:buffer'
+import { buffer } from 'node:stream/consumers'
 import type { Logger } from 'pino'
 import type { AssetsService, BlurhashSettings } from './types'
 
@@ -40,22 +40,17 @@ export async function generateBlurHash(
       },
     })
 
-    const chunks: Array<Buffer> = []
-    let totalSize = 0
-
-    for await (const chunk of stream) {
-      const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)
-      chunks.push(buffer)
-      totalSize += buffer.length
-    }
-
-    const buffer = Buffer.concat(chunks, totalSize)
-    const blurImageBase64 = buffer.toString('base64')
+    const buf = await buffer(stream)
+    const blurImageBase64 = buf.toString('base64')
     const blurHash = `data:image/${settings.format};base64,${blurImageBase64}`
-    logger.trace(`blurhash: generated ${blurHash} for image ${key}`)
+    logger.trace(() => {
+      return `blurhash: generated ${blurHash} for image ${key}`
+    })
 
     return blurHash
   } catch (error) {
-    logger.error(`blurhash: Error generating blurhash: ${error}`)
+    logger.error(() => {
+      return `blurhash: Error generating blurhash: ${error}`
+    })
   }
 }

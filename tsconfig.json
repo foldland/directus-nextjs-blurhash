@@ -23,18 +23,7 @@
     "moduleResolution": "Bundler",
     "jsx": "preserve",
     "plugins": [],
-    "incremental": true,
-    /* Path Aliases */
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "incremental": true
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.js"],
-  "exclude": [
-    "node_modules",
-    "boilerplates",
-    "dist/*.js",
-    "packages/**/dist/*.js",
-    "packages/react-simple-maps"
-  ]
+  "include": ["./src/**/*.ts", "./test/**/*.ts"]
 }
