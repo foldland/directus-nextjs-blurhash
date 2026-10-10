@@ -45,29 +45,29 @@
     "sharp": "^0.34.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.12",
+    "@biomejs/biome": "2.5.14",
     "@directus/sdk": "25.0.1",
     "@directus/types": "16.2.0",
-    "@foldland/biome-configs": "1.5.0",
-    "@types/node": "24.13.3",
-    "@vitest/coverage-v8": "5.0.0",
+    "@foldland/biome-configs": "1.5.1",
+    "@types/node": "24.19.1",
+    "@vitest/coverage-v8": "5.0.3",
     "directus-sdk-typegen": "0.2.1",
     "dotenv": "17.4.2",
     "pino": "9.7.0",
     "sharp": "0.35.3",
     "typescript": "7.0.2",
-    "vitest": "5.0.0",
+    "vitest": "5.0.3",
     "vitest-mock-extended": "5.1.1"
   },
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.20.0",
+      "version": "24.21.0",
       "onFail": "download"
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "12.3.4",
+      "version": "12.10.1",
       "onFail": "download"
     }
   }
