@@ -28,7 +28,7 @@ services:
             start_period: 30s
 
     cache:
-        image: docker.io/redis:8@sha256:298e5b3bc566bade82f46ad5511777a4a07a294097ce16ada2f6a42be5239df5
+        image: docker.io/redis:8@sha256:2c2dff791878316e3b083188be0d578423b24813cdda5de0e80ea4f7b3e6bfd6
         healthcheck:
             test: ["CMD-SHELL", "[ $$(redis-cli ping) = 'PONG' ]"]
             interval: 10s
@@ -38,7 +38,7 @@ services:
             start_period: 30s
 
     directus:
-        image: docker.io/directus/directus:12.3@sha256:8978edf633ae28aa31464bb71c55300c94d8bc771ff3727b5fac485173283869
+        image: docker.io/directus/directus:12.5@sha256:7de5d6898b955dab1672619aed590035dcade4f8d7396d913e55543e114d1331
         # build:
         #     context: ../
         #     dockerfile: ./Dockerfile
