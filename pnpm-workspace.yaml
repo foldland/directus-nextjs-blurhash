@@ -13,6 +13,8 @@ savePrefix: "^"
 resolutionMode: "highest"
 strictPeerDependencies: true
 preferFrozenLockfile: true
+autoDedupe: true
+dedupePeers: true
 
 # node version
 engineStrict: true
