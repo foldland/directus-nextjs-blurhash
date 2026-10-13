@@ -32,14 +32,14 @@
   "devDependencies": {
     "@biomejs/biome": "2.5.15",
     "@directus/sdk": "27.0.0",
-    "@directus/types": "17.0.0",
+    "@directus/types": "18.0.0",
     "@foldland/biome-configs": "1.6.0",
     "@types/node": "24.19.2",
     "@vitest/coverage-v8": "5.0.3",
     "directus-sdk-typegen": "0.2.1",
     "dotenv": "18.0.7",
     "pino": "9.7.0",
-    "sharp": "0.35.4",
+    "sharp": "0.35.5",
     "typescript": "7.0.2",
     "vitest": "5.0.3",
     "vitest-mock-extended": "5.1.1"
@@ -47,7 +47,7 @@
   "peerDependencies": {
     "@directus/extensions-sdk": "^17.0.0 || ^18.0.0",
     "pino": "^9.0.0",
-    "sharp": "^0.34.0"
+    "sharp": "^0.34.0 || ^0.35.0"
   },
   "devEngines": {
     "runtime": {
