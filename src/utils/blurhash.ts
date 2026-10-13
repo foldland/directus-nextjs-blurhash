@@ -1,6 +1,6 @@
 import { buffer } from 'node:stream/consumers'
 import type { Logger } from 'pino'
-import type { AssetsService, BlurhashSettings } from './types'
+import type { AssetsService, BlurhashSettings } from './types.ts'
 
 /**
  * Input formats supported by sharp.

@@ -9,9 +9,9 @@ import {
   updateSettings,
   uploadFiles,
 } from '@directus/sdk'
-import type { DirectusSettings, Schema } from '../utils/directus-schema'
-import { env } from './env'
-import { getImageFile, type ImageFormat } from './image'
+import type { DirectusSettings, Schema } from '../utils/directus-schema.ts'
+import { env } from './env.ts'
+import { getImageFile, type ImageFormat } from './image.ts'
 
 const client = createDirectus<Schema>(env.directusUrl)
   .with(rest())

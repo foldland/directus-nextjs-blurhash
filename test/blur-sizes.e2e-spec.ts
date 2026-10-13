@@ -5,8 +5,8 @@ import {
   getBlurhash,
   login,
   uploadImage,
-} from '../src/testing/directus'
-import { decodeDataUri } from '../src/testing/image'
+} from '../src/testing/directus.ts'
+import { decodeDataUri } from '../src/testing/image.ts'
 
 describe('blur sizes (e2e)', () => {
   const expected = {
