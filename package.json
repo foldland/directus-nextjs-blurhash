@@ -1,29 +1,19 @@
 {
   "name": "@foldland/directus-nextjs-blurhash",
-  "description": "A Directus extension for generating and storing nextjs blur data strings, enhancing image loading visuals.",
-  "icon": "extension",
   "version": "1.1.7",
-  "author": "foldland Software GmbH",
-  "license": "Apache-2.0",
+  "description": "A Directus extension for generating and storing nextjs blur data strings, enhancing image loading visuals.",
   "keywords": [
     "directus",
     "directus-extension",
     "nextjs",
     "blurhash"
   ],
+  "license": "Apache-2.0",
+  "author": "foldland Software GmbH",
   "files": [
     "dist",
     "README.md"
   ],
-  "directus:extension": {
-    "type": "hook",
-    "path": "dist/index.js",
-    "source": "src/index.ts",
-    "host": ">=11.11.0",
-    "icon": "Image",
-    "description": "A Directus extension for generating and storing nextjs blur data strings, enhancing image loading visuals.",
-    "author": "foldland Software GmbH"
-  },
   "scripts": {
     "build": "directus-extension build",
     "check": "pnpm format:check && pnpm lint:check && pnpm typecheck",
@@ -34,30 +24,30 @@
     "link": "directus-extension link directus/extensions",
     "lint:check": "biome check --formatter-enabled=false --linter-enabled=true --assist-enabled=true",
     "lint:write": "pnpm lint:check --write",
+    "test": "vitest run --coverage --project unit",
     "test:all": "vitest run --coverage",
     "test:e2e": "vitest run --coverage --project e2e",
-    "test": "vitest run --coverage --project unit",
     "typecheck": "tsc --noEmit"
   },
-  "peerDependencies": {
-    "@directus/extensions-sdk": "^17.0.0 || ^18.0.0",
-    "pino": "^9.0.0",
-    "sharp": "^0.34.0"
-  },
   "devDependencies": {
-    "@biomejs/biome": "2.5.14",
+    "@biomejs/biome": "2.5.15",
     "@directus/sdk": "26.0.0",
     "@directus/types": "17.0.0",
-    "@foldland/biome-configs": "1.5.1",
-    "@types/node": "24.19.1",
+    "@foldland/biome-configs": "1.6.0",
+    "@types/node": "24.19.2",
     "@vitest/coverage-v8": "5.0.3",
     "directus-sdk-typegen": "0.2.1",
-    "dotenv": "18.0.6",
+    "dotenv": "18.0.7",
     "pino": "9.7.0",
     "sharp": "0.35.4",
     "typescript": "7.0.2",
     "vitest": "5.0.3",
     "vitest-mock-extended": "5.1.1"
+  },
+  "peerDependencies": {
+    "@directus/extensions-sdk": "^17.0.0 || ^18.0.0",
+    "pino": "^9.0.0",
+    "sharp": "^0.34.0"
   },
   "devEngines": {
     "runtime": {
@@ -67,8 +57,18 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "12.10.1",
+      "version": "12.11.2",
       "onFail": "download"
     }
+  },
+  "icon": "extension",
+  "directus:extension": {
+    "type": "hook",
+    "path": "dist/index.js",
+    "source": "src/index.ts",
+    "host": ">=11.11.0",
+    "icon": "Image",
+    "description": "A Directus extension for generating and storing nextjs blur data strings, enhancing image loading visuals.",
+    "author": "foldland Software GmbH"
   }
 }
