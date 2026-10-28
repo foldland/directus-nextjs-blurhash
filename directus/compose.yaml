@@ -1,7 +1,7 @@
 name: directus-nextjs-blurhash
 services:
     database:
-        image: docker.io/postgis/postgis:18-master@sha256:6af934bfb961b321feb9d8c10d29861d64809fcf3a03f1666deb30db88a6918d
+        image: docker.io/postgis/postgis:18-master@sha256:620f1f1ffb479ffbda686dbfde113557a9859cdf9de0f86683b0702846915107
         platform: linux/amd64
         volumes:
             - ${DATABASE_VOLUME:-./data/database}:/var/lib/postgresql
@@ -28,7 +28,7 @@ services:
             start_period: 30s
 
     cache:
-        image: docker.io/redis:8@sha256:2c2dff791878316e3b083188be0d578423b24813cdda5de0e80ea4f7b3e6bfd6
+        image: docker.io/redis:8@sha256:4764ce37931aac77c0d033680b339b19b4a4a81772204d268947cb851212d0ac
         healthcheck:
             test: ["CMD-SHELL", "[ $$(redis-cli ping) = 'PONG' ]"]
             interval: 10s
@@ -38,7 +38,7 @@ services:
             start_period: 30s
 
     directus:
-        image: docker.io/directus/directus:12.5@sha256:7de5d6898b955dab1672619aed590035dcade4f8d7396d913e55543e114d1331
+        image: docker.io/directus/directus:12.6@sha256:5a475c31cf547da604b3ef1bd85097145825ca6aab8841dc784bb08eaa21681b
         # build:
         #     context: ../
         #     dockerfile: ./Dockerfile

@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, describe, test } from 'vitest'
+import { afterAll, beforeAll, describe, test as it } from 'vitest'
 import {
   applySettings,
   cleanupFiles,
@@ -25,7 +25,7 @@ describe('blur sizes (e2e)', () => {
     await applySettings({ blurhasher_blur_size: 8 })
   })
 
-  test.for([4, 8, 16, 32] as const)(
+  it.for([4, 8, 16, 32] as const)(
     'uploading generates a blurhash with size %i',
     async (size, { expect }) => {
       await applySettings({ blurhasher_blur_size: size })
