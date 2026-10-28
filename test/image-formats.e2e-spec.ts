@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, describe, test } from 'vitest'
+import { afterAll, beforeAll, describe, test as it } from 'vitest'
 import {
   cleanupFiles,
   getBlurhash,
@@ -27,7 +27,7 @@ describe('image formats (e2e)', () => {
     await cleanupFiles()
   })
 
-  test.concurrent.for([undefined, 'jpeg', 'png', 'tiff', 'webp'] as const)(
+  it.concurrent.for([undefined, 'jpeg', 'png', 'tiff', 'webp'] as const)(
     'uploading %s generates a blurhash',
     async (format, { expect }) => {
       const { id } = await uploadImage('test/sunset.jpg', format)

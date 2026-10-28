@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, describe, test } from 'vitest'
+import { afterAll, beforeAll, describe, test as it } from 'vitest'
 import {
   applySettings,
   cleanupFiles,
@@ -33,7 +33,7 @@ describe('blur formats (e2e)', () => {
     await applySettings({ blurhasher_format: 'webp' })
   })
 
-  test.for(['jpeg', 'png', 'webp', 'avif'] as const)(
+  it.for(['jpeg', 'png', 'webp', 'avif'] as const)(
     'uploading generates a blurhash in format %s',
     async (format, { expect }) => {
       await applySettings({ blurhasher_format: format })
