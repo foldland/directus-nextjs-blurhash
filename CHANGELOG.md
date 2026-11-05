@@ -3,6 +3,46 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 ---
+## [1.1.8](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.7..v1.1.8) - 2026-11-05
+
+### 🔨 Refactoring
+
+- use pnpm docker image for builds - ([c4889ed](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/c4889ed5d814fc350eb7689af25a28101689d52b)) - @nikolas.rimikis
+
+### 👷 Continuous Integration
+
+- enable docker lint - ([63d1186](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/63d118679e380781a1c6d1fd47631406af99fcc5)) - @nikolas.rimikis
+
+### 🔧 Chores
+
+- **(deps)** update all non-major dependencies - ([0e57b86](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/0e57b86d4ddc54c767087ae3505415dbaae40520)) - @renovate
+- **(deps)** update dependency dotenv to v18 - ([ce5013c](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/ce5013c205077d4fe2347acf6cc30eea9b9d6948)) - @renovate
+- **(deps)** update dependency @directus/types to v17 - ([7511992](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/7511992a40ba3dc96980122c1cd100df70b8a12b)) - @renovate
+- **(deps)** lock file maintenance - ([d9ab435](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/d9ab43506d0a45a3aecde29907559db6408e8527)) - @renovate
+- **(deps)** update all non-major dependencies - ([4ea63a5](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/4ea63a5fd18ffb47c18295e035df722ef1919608)) - @renovate
+- **(deps)** update dependency @directus/sdk to v27 - ([8c06a82](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/8c06a821c7e3d29eff8feb2b773c4a7ea90c3a8e)) - @renovate
+- **(deps)** update dependency @directus/types to v18 - ([776df14](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/776df140213f056d58997a4be21d5f5dcdeb0041)) - @renovate
+- **(deps)** update all non-major dependencies - ([3bf4784](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/3bf4784f39f0154556ea08221f6ba07af9a7172b)) - @renovate
+- **(deps)** lock file maintenance - ([6c4aee1](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/6c4aee18ddd2e1abe5068265d948ef165b146f77)) - @renovate
+- **(deps)** update all non-major dependencies - ([70444c6](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/70444c613decc543a5cb57bae7ca2dd405ce20fe)) - @renovate
+- **(deps)** lock file maintenance - ([626a708](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/626a7082e5585b2ec237680f2f36833aa34a37e1)) - @renovate
+- **(deps)** update all non-major dependencies - ([045c8a1](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/045c8a1204ed75f44b845146087f3b6f237e0fa1)) - @Renovate Bot
+- **(deps)** update node.js to v26 - ([8c53910](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/8c53910b8970780f97cac579deefdfafa1bc47c8)) - @renovate
+- fix devcontainer - ([ad24869](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/ad24869846a08770f5e8785240d5839288224989)) - @nikolas.rimikis
+- ato dedupe dependencies - ([6fce0bc](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/6fce0bc983ad17b0ecf8091065fc52b0d9cd4165)) - @nikolas.rimikis
+- security fixes - ([56a5bc2](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/56a5bc26b0562cd8fddff7fe3be99a7863a19a1e)) - @nikolas.rimikis
+- remove security overrides - ([84e2f50](https://gitlab.fold.land/tools/directus-nextjs-blurhash/commit/84e2f50e67df054348b736f2c4ce8145130d4bff)) - @nikolas.rimikis
+
+
+
+
+#### Statistics
+- 19 commit(s) contributed to the release.
+- 26 day(s) passed between the first and last commit.
+- 19 commit(s) parsed as conventional.
+- 0 linked issue(s) detected in commits.
+- 58 day(s) passed between releases.
+---
 ## [1.1.7](https://gitlab.fold.land/tools/directus-nextjs-blurhash/compare/v1.1.6..v1.1.7) - 2026-09-08
 
 ### 🔨 Refactoring
