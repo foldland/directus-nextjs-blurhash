@@ -34,7 +34,7 @@
     "@directus/sdk": "27.1.0",
     "@directus/types": "18.1.0",
     "@foldland/biome-configs": "1.6.1",
-    "@types/node": "24.19.2",
+    "@types/node": "26.6.6",
     "@vitest/coverage-v8": "5.0.5",
     "directus-sdk-typegen": "0.2.1",
     "dotenv": "18.0.9",
@@ -52,7 +52,7 @@
   "devEngines": {
     "runtime": {
       "name": "node",
-      "version": "24.22.2",
+      "version": "26.13.0",
       "onFail": "download"
     },
     "packageManager": {
