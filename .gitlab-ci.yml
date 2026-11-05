@@ -38,6 +38,11 @@ analysis-format:
 analysis-typescript:
   extends: .analysis-nodejs-typescript
 
+analysis-docker:
+  extends: .analysis-docker
+  variables:
+    DOCKERFILE: Dockerfile
+
 # Build
 build:
   extends: .build-nodejs-pnpm
