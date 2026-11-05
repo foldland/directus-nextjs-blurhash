@@ -1,15 +1,12 @@
 ####################################################################################################
 ## Build Packages
 
-FROM docker.io/node:24.22.2-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c AS build
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+FROM ghcr.io/pnpm/pnpm:12@sha256:172468925f0ca368313c09867081a43e298eaeb13dee8f7e4356bfad45dd8b15 AS build
 COPY . /extensions
-WORKDIR /extensions
+WORKDIR /extensions/packages/directus-extensions
 
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    pnpm install --frozen-lockfile &&\
+RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm \
+    pnpm install --store-dir /var/cache/pnpm --frozen-lockfile &&\
     pnpm run build
 
 ####################################################################################################
