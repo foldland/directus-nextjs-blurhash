@@ -21,6 +21,10 @@ engineStrict: true
 ignorePnpmfile: true
 
 # Security
+lockfile:
+  includeResolutionSettings: true
+audit:
+  level: high
 blockExoticSubdeps: true
 hoist: false
 hoistWorkspacePackages: false
@@ -39,3 +43,6 @@ updateConfig:
   ignoreDependencies:
     - pino
     - sharp
+
+overrides:
+  joi@>=18.0.0 <18.3.1: ^18.3.1
