@@ -1,7 +1,7 @@
 ####################################################################################################
 ## Build Packages
 
-FROM docker.io/node:24.22.1-slim@sha256:be8204d4bd327363357f532187b752ff62759c31bedf98e9e18fc08c9cbd605c AS build
+FROM docker.io/node:24.22.2-slim@sha256:c86ecead9e55a5210ac1727de38a4ca840bf03dcaf34dc9749addbf383b1920c AS build
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
@@ -14,7 +14,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
 
 ####################################################################################################
 ## Create Production Image
-FROM docker.io/directus/directus:12.6@sha256:5a475c31cf547da604b3ef1bd85097145825ca6aab8841dc784bb08eaa21681b AS directus
+FROM docker.io/directus/directus:12.6@sha256:e1561b5e526e8e7a2ac19b7bb6eab63611dd84a862a8c45b864118768a2baff4 AS directus
 
 COPY --chown=node:node \
     --from=build /extensions/dist /directus/extensions/@foldland-directus-nextjs-blurhash/dist
