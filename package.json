@@ -30,18 +30,18 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.6.4",
+    "@biomejs/biome": "2.6.6",
     "@directus/sdk": "27.1.0",
     "@directus/types": "18.1.0",
-    "@foldland/biome-configs": "1.6.1",
+    "@foldland/biome-configs": "1.6.2",
     "@types/node": "26.6.6",
-    "@vitest/coverage-v8": "5.0.5",
+    "@vitest/coverage-v8": "5.1.0",
     "directus-sdk-typegen": "0.2.1",
     "dotenv": "18.0.9",
     "pino": "9.7.0",
     "sharp": "0.35.5",
     "typescript": "7.0.2",
-    "vitest": "5.0.5",
+    "vitest": "5.1.0",
     "vitest-mock-extended": "5.1.1"
   },
   "peerDependencies": {
@@ -57,7 +57,7 @@
     },
     "packageManager": {
       "name": "pnpm",
-      "version": "12.16.1",
+      "version": "12.18.0",
       "onFail": "download"
     }
   },
