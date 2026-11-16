@@ -1,7 +1,7 @@
 name: directus-nextjs-blurhash
 services:
     database:
-        image: docker.io/postgis/postgis:18-master@sha256:76678a32a075cd4ada624e73d6bcbf0c98a3491657cd20d0074017f8ecd29ef6
+        image: docker.io/postgis/postgis:18-master@sha256:f23025f6ed0f253f16830d9727e04b3f4f05a3ae7661be02ce333c99bb8e75d8
         platform: linux/amd64
         volumes:
             - ${DATABASE_VOLUME:-./data/database}:/var/lib/postgresql
