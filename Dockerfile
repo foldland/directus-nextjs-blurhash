@@ -1,7 +1,7 @@
 ####################################################################################################
 ## Build Packages
 
-FROM ghcr.io/pnpm/pnpm:12@sha256:1228cc16b32505a3e46e9a911c2af766c263928db01f21cd1e8b79c1bdd24431 AS build
+FROM ghcr.io/pnpm/pnpm:12@sha256:168feba88e6a1684c99a62cbf4fe361d4e683e2a6c920d3b0acde7e15a28b62d AS build
 COPY . /extensions
 WORKDIR /extensions/packages/directus-extensions
 
