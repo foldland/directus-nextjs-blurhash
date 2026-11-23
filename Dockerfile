@@ -1,7 +1,7 @@
 ####################################################################################################
 ## Build Packages
 
-FROM ghcr.io/pnpm/pnpm:12@sha256:168feba88e6a1684c99a62cbf4fe361d4e683e2a6c920d3b0acde7e15a28b62d AS build
+FROM ghcr.io/pnpm/pnpm:12@sha256:349c846c6c9dab76b2f6fbf4b2df14d5a8c9b2a0fce92fc7e5c2eec3f437e801 AS build
 COPY . /extensions
 WORKDIR /extensions/packages/directus-extensions
 
@@ -11,7 +11,7 @@ RUN --mount=type=cache,id=pnpm,target=/var/cache/pnpm \
 
 ####################################################################################################
 ## Create Production Image
-FROM docker.io/directus/directus:12.6@sha256:e1561b5e526e8e7a2ac19b7bb6eab63611dd84a862a8c45b864118768a2baff4 AS directus
+FROM docker.io/directus/directus:12.7@sha256:f197911d949a37d882f781b0381955b851c86625435014cd67bdaf3eabcff2a7 AS directus
 
 COPY --chown=node:node \
     --from=build /extensions/dist /directus/extensions/@foldland-directus-nextjs-blurhash/dist
